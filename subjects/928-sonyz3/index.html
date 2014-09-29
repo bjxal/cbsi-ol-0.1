@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="keywords" content="Sony Z3" />
+    <meta name="description" content="敬请访问" />
+    <meta name="author" content="330785652@qq.com"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+
+    <script src="http://new-icon.ol-img.com/statics/common/js/device.js"></script>
+    <title>Sony Z3</title>
+    <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
+</head>
+<body>
+
+<div id="pack" class="pack"></div>
+<script type="text/javascript">
+    function getImgPath(){
+        var href = $('#css').attr('href').toString();
+        if(!/^http/.test(href)){
+            href = location.href;
+        }else{
+            href = href.substring(0,href.lastIndexOf('\/'));
+        }
+        return href.substring(0,href.lastIndexOf('\/'))+'/img-subject';
+    }
+    var al = {
+        phone:'手机号格式不正确!',
+        name:'请填写姓名!'
+    };
+    var PARIS_DESC = [
+        '轻便俏丽的装扮，走在人来人往的街道上，用心感悟生活，用时尚抒发情感，我会用索尼Z3的镜头去捕捉每一刻，2070万像素1/2.3英寸Exmor™ RS影像传感器有如鹰眼一般的敏锐视觉帮我发现生活中每一个不易察觉的时尚icon，等待着我去发现它们……'
+        ,'水雾下的这座城显得格外干净，踩在水洼中的自己拿出索尼Z3去录制下雨中的城际，雨滴轻拍在索尼Z3的屏幕上散落成错落的精灵悄然滑动于屏幕之上，索尼Z3超强防水级别（IP65/68）让我在此刻依然能够安心的享受这座城市给予我的每一个细微的灵感'
+        ,'一杯Latte，一扇窗，一个动态的画面……坐在咖啡厅看着窗外的一切。三两个人的COFFEE HOUSE，让我能够享受工作之后的闲逸与宁静，拿出索尼Z3插上耳机 《LISTEN》的音乐响起，缓慢且轻柔的节奏流淌进我的耳道按摩着我疲惫的神经，索尼Z3高解析度音频、数字降噪和DESS HX数字增强功能为平淡的节奏注入激荡的灵魂，总能够给我慰藉心灵最好的调剂品'
+        ,' 崇尚简约风格的我，总是把自己的生活简单化，极简的穿衣之道，内敛却不失个性的配饰无处不为自己插上简单的标签，手中的索尼Z3更是我的个性代言品，以7.3毫米超薄铝制圆润框架融合优雅设计与精湛工艺让我在工作与生活中都能够轻松应对。我，拒绝繁重，做一个简单的人，那样很纯粹……'
+        ,'忙碌的一天，索尼Z3的智能节电技术，提供长达2天的续航时间让工作中的我时刻不断电，生活的激情与工作的热情随着索尼Z3都将演变为一场不插电的个人路演，让我每个时刻都能够尽显精彩本色'
+    ];
+
+    var BEIJING_DESC = [
+            '索尼Z3的镜头去捕捉我跳跃的色彩，2070万像素1/2.3英寸Exmor™ RS影像传感器让我在炫彩的世界中尽情遨游，不论何时何地，思绪已随之起航......'
+            ,'倾倒的水杯好似微瀑般溅落，索尼Z3超强防水级别（IP65/68）让我在时刻能量充沛，永远不用担心突如其来的小尴尬。'
+            ,'温暖阳光轻抚脸庞，插上耳机用心聆听嘈杂世界中的片刻宁静，索尼Z3高解析度音频、数字降噪和DESS HX数字增强功能把音乐完美演绎，为我熨烫心灵褶皱。'
+            ,'索尼Z3让我特立独行，以7.3毫米超薄铝制圆润框架融合优雅设计与精湛工艺与我对事物的完美追求不谋而合。我，随性自然，不拘一格的完美让我沉迷……'
+            ,'时尚创意不停息，时尚不断电，索尼Z3的智能节电技术，提供长达2天的续航时间让工作与生活中的我激情随时迸发，时刻准备迎接下一个未知的挑战。'
+    ];
+
+</script>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/handlebars-1.3.0.min.js"></script>
+<script type="text/javascript" src="js-subject/imports.min.js"></script>
+<script type="text/javascript" src="js-subject/index.js"></script>
+<script type="text/javascript">
+    new Fui.Weixin({
+        title:'你最爱的好友是谁？赶快为TA量身定制一款SK-II限量版鲜花礼盒吧！',
+        desc:null,
+        link: String(window.location.href),
+        img_url:getImgPath()+'/weixin.jpg'
+    });
+</script>
+</body>
+</html>

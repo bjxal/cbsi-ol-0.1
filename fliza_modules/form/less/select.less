@@ -1,0 +1,61 @@
+@inputBorder: lightgray;
+@selectSelHover: rgba(50,50,50,.75);
+.fui-form-select{
+  .left{
+    >label{}
+  }
+  .right{
+    position: relative;
+    .holder{
+      position: relative;
+//      height: @lineHeight;
+//      line-height: @lineHeight;
+      display: inline-block;
+//      padding: 0 5px;
+      text-align: left;
+      width: 100%;
+      border: 1px solid @inputBorder;
+//      border-radius: .4em;
+      box-sizing: border-box;
+    }
+    .holder:after{
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      width: 10px;
+      height: 10px;
+      border: 5px solid transparent;
+      border-left-color: #222222;
+      .transform(translate3d(0,-50%,0) rotate(0deg));
+      -webkit-transform-origin: 25% center;
+      .transition(-webkit-transform .3s ease);
+      content:' '
+    }
+    .holder.on:after{
+      .transform(translate3d(0,-50%,0) rotate(90deg));
+    }
+    .sel-list{
+      z-index: 1;
+//      background-color: white;
+      display: none;
+      box-sizing: border-box;
+      width: 100%;
+      position: absolute;
+      border: 1px solid @inputBorder;
+//      border-radius: .4em;
+//      top: @form-lineHeight+1;
+      background-color: #222222;
+      left:0;
+      .sel{
+        a{
+          display: block;
+          color: white;
+          padding: 5px 12px;
+        }
+        a:hover{
+          background:@selectSelHover;
+        }
+      }
+    }
+  }
+}

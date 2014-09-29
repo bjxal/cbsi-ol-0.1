@@ -1,0 +1,19 @@
+{
+    "name":"cbsi-ol-1.1",
+    "statics":{
+    },
+    "directory":true,
+    "xml_parser":false,
+    "server":{
+        "port":80,
+        "htmlMapping":{
+        },
+        "services":[
+        ]
+    },
+    "projects":[
+    ],
+
+    "publish":{
+    }
+}

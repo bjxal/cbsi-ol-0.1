@@ -1,0 +1,15 @@
+require('button');
+require('./src/Form');
+require('./src/Element');
+require('./src/Text');
+require('./src/Mail');
+require('./src/Password');
+require('./src/Button');
+require('./src/Submit');
+require('./src/Cancel');
+require('./src/ImagePicker');
+require('./src/ImageListPicker');
+require('./src/Select');
+require('./src/CheckBox');
+require('./src/Link');
+require('./src/String');

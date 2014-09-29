@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=gbk" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <script src="http://new-icon.ol-img.com/statics/common/js/device.js"></script>
+    <title>碧欧泉</title>
+    <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
+</head>
+<body>
+
+<div id="pack" class="pack"></div>
+<script type="text/javascript">
+    function getImgPath(){
+        var href = $('#css').attr('href').toString();
+        if(!/^http/.test(href)){
+            href = location.href;
+        }else{
+            href = href.substring(0,href.lastIndexOf('\/'));
+        }
+        return href.substring(0,href.lastIndexOf('\/'))+'/img-subject';
+    }
+    var al = {
+        phone:'手机号格式不正确!',
+        name:'请填写姓名!'
+    };
+</script>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/handlebars-1.3.0.min.js"></script>
+<script type="text/javascript" src="js-subject/imports.min.js"></script>
+<script type="text/javascript" src="js-subject/index.js"></script>
+<script type="text/javascript" src="js-subject/youkuApi.js"></script>
+<script type="text/javascript">
+    new Fui.Weixin({
+        title:'我的精华时刻 见证蓝源精华力量',
+        desc:null,
+        link: String(window.location.href),
+        img_url:getImgPath()+'/weixin.jpg'
+    });
+</script>
+</body>
+</html>

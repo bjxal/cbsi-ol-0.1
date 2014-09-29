@@ -1,0 +1,123 @@
+@import "/fliza_modules/core/less/index";
+@import "/fliza_modules/templates/less/index";
+@import "/fliza_modules/PageSlider/less/index";
+
+html,body{
+  height: 100%;
+}
+
+.p1-ani{
+  .animation(p1Ani 3s linear infinite);
+}
+@-webkit-keyframes p1Ani{
+  0%{
+//    .transform(translate3d(0px,0px,0px) rotate(0deg));
+    -webkit-filter: saturate(5);
+//    -webkit-transform-origin: 322px 562px;
+  }
+  50%{
+//    .transform(translate3d(0px,0px,0px) rotate(180deg));
+    -webkit-filter: saturate(.5);
+//    -webkit-transform-origin: 322px 562px;
+  }
+  100%{
+//    .transform(translate3d(0px,0px,0px) rotate(360deg));
+    -webkit-filter: saturate(5);
+//    -webkit-transform-origin: 322px 562px;
+  }
+}
+
+.p7{
+  .p8-share-popup{
+    position: absolute;
+    width:100%;
+    height:100%;
+    display: none;
+    .share{
+      position: absolute;
+      width: 280px;
+      height: 55px;
+      left: 180px;
+      top: 745px;
+    }
+    .popup{
+      position: absolute;
+      background-image: url(../img-subject/share.png);
+      background-size: cover;
+      background-position: center top;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index: 1;
+      display: none;
+    }
+  }
+  .p8-form{
+    position: absolute;
+    width:100%;
+    height:100%;
+    input{
+      position: absolute;
+      background-color: transparent;
+      border:0;
+      padding:0 10px;
+      color: white;
+      font-size: 28px;
+      outline: 0;
+    }
+    .name{
+      height: 50px;
+      width: 350px;
+      left: 155px;
+      top: 354px;
+    }
+    .phone{
+      height: 50px;
+      width: 350px;
+      left: 155px;
+      top: 498px;
+    }
+    .submit{
+      position: absolute;
+      height: 50px;
+      width: 250px;
+      left: 205px;
+      top: 598px;
+      border:0;
+      color: white;
+      font-size: 28px;
+    }
+  }
+
+}
+
+
+.p8{
+  .share{
+    position: absolute;
+    width: 280px;
+    height: 55px;
+    left: 180px;
+    top: 745px;
+  }
+  .popup{
+    position: absolute;
+    background-image: url(../img-subject/share.png);
+    background-size: cover;
+    background-position: center top;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: 1;
+    display: none;
+  }
+
+}
+
+
+
+
+
+

@@ -1,0 +1,163 @@
+@import "/fliza_modules/core/less/index";
+@import "/fliza_modules/templates/less/index";
+@import "/fliza_modules/PageSlider/less/index";
+
+html,body{
+  height: 100%;
+}
+
+.page3{
+  position: relative;
+  height: 100%;
+  .pro{
+    position: absolute;
+    width: 320px;
+    height:380px;
+  }
+  .pro1{
+    top: 580px;
+    left:0;
+  }
+  .pro2{
+    top: 200px;
+    left: 320px;
+  }
+  .pro3{
+    top:200px;
+    left:0;
+  }
+  .pro4{
+    top: 580px;
+    left: 320px;
+  }
+  .success{
+    width: 100%;
+    height: 100%;
+    .background(url(../img-subject/p4/bg.jpg));
+    .s{
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+    .s1{
+      .background(url(../img-subject/p4/1.png));
+    }
+    .s2{
+      .background(url(../img-subject/p4/2.png));
+    }
+    .s3{
+      .background(url(../img-subject/p4/3.png));
+    }
+    .s4{
+      .background(url(../img-subject/p4/4.png));
+    }
+
+  }
+}
+.page2{
+  img{
+    position: absolute;
+  }
+}
+.page1{
+  position: relative;
+  height: 100%;
+  .cover{
+    position: absolute;
+    z-index: 10;
+  }
+  .pro{
+    position: absolute;
+    -webkit-transform: rotate(-12deg);
+  }
+  .pro1{
+    width : 120px;
+    height: 350px;
+    top: 350px;
+    left: 90px;
+  }
+  .pro2{
+    width : 100px;
+    height: 350px;
+    top: 350px;
+    left: 210px;
+  }
+  .pro3{
+    width : 100px;
+    height: 350px;
+    top: 310px;
+    left: 300px;
+  }
+  .pro4{
+    width : 100px;
+    height: 350px;
+    top: 310px;
+    left: 400px;
+  }
+
+}
+.popup{
+  position: absolute;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  .transform(translate(-50%,-50%) scale(0));
+  .transition(-webkit-transform .4s);
+  &.show{
+    .transform(translate(-50%,-50%) scale(1));
+  }
+  .close{
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    right: 5px;
+    width: 20%;
+    height: 20%;
+    &:before,&:after{
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      background-color: #6b6b6b;
+      content:' ';
+      top: 50%;
+      left: 25%;
+      .transform(rotate(45deg));
+    }
+    &:after{
+      .transform(rotate(-45deg));
+    }
+  }
+}
+
+
+.module-photos {
+
+  .photos-pack {
+    &.focus {
+      .transform(translate3d(0, 10%, 0) rotate(0deg) scale(1));
+    }
+  }
+  &.ani{
+    .photos-pack{
+      .normal{
+        .transform(translate3d(-50%,-50%,0) scale(1.3) rotate(10deg));
+      }
+      .pre1{
+        .transform(translate3d(-50%,-50%,0) scale(1.3) rotate(0deg));
+      }
+      .pre2{
+        .transform(translate3d(-50%,-50%,0) scale(1.3) rotate(5deg));
+      }
+      .afterL{
+        .transform(translate3d(-150%,-50%,0) scale(1.3) rotate(5deg));
+      }
+      .afterR{
+        .transform(translate3d(100%,-50%,0) scale(1.3) rotate(-5deg));
+      }
+
+    }
+  }
+  .phtots-arrow{
+    border-color: indianred;
+  }
+}

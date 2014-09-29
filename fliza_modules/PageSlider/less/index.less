@@ -1,0 +1,38 @@
+
+.fui-pageSlider{
+  position: relative;
+  width: 640px;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0 auto;
+  .c{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    >section{
+      position: absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      .transform(translate3d(0,0,0) scale(1) skew(1));
+      .transition(-webkit-transform .3s);
+      overflow: hidden;
+    }
+  }
+
+  &.h{
+    >.c{
+      height: 100%;
+      >section{
+        display: inline-block;
+        height: 100%;
+        vertical-align: top;
+      }
+    }
+  }
+}

@@ -23,47 +23,88 @@ Fui.Template.Paris = Fui.PageSlider.extend({
                 template:'Photos',
                 bg: imgDir +'/paris/bg.jpg'
                 ,design:function(){
-                    this.$el.find('.desc-pack').prepend('<img data-tap="pro" style="margin-left:10px;" src="'+imgDir+'/pro.png" align="right"/>');
+                    this.$el.find('.desc-pack').prepend('<img data-tap="pro" style="margin-right:10px;" src="/paris/'+imgDir+'/pro.png" align="left"/>');
                 },
                 data:[
                     {
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/paris/day1/4.jpg'
                         ,desc:PARIS_DESC[0]
                     }
                     ,{
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/paris/day1/3.jpg'
                         ,desc:PARIS_DESC[0]
 
                     }
                     ,{
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/paris/day1/2.jpg'
+                        ,desc:PARIS_DESC[0]
+
+                    }
+                    ,{
+                        src:imgDir + '/paris/day1/1.jpg'
                         ,desc:PARIS_DESC[0]
 
                     }
                 ]
             }
-        /**
-         * 巴黎图片列表，第2天
-         * */
+            /**
+             * 巴黎图片列表，第2天
+             * */
             ,{
                 template:'Photos',
                 bg: imgDir +'/paris/bg.jpg'
                 ,design:function(){
-                    this.$el.find('.desc-pack').prepend('<img data-tap="pro" style="margin-left:10px;" src="'+imgDir+'/pro.png" align="right"/>');
+                    this.$el.find('.desc-pack').prepend('<img data-tap="pro" style="margin-right:10px;" src="/paris/'+imgDir+'/pro.png" align="left"/>');
                 },
                 data:[
                     {
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/paris/day2/4.jpg'
                         ,desc:PARIS_DESC[1]
                     }
                     ,{
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/paris/day2/3.jpg'
                         ,desc:PARIS_DESC[1]
 
                     }
                     ,{
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/paris/day2/2.jpg'
                         ,desc:PARIS_DESC[1]
+
+                    }
+                    ,{
+                        src:imgDir + '/paris/day2/1.jpg'
+                        ,desc:PARIS_DESC[1]
+
+                    }
+                ]
+            }
+            /**
+             * 巴黎图片列表，第3天
+             * */
+            ,{
+                template:'Photos',
+                bg: imgDir +'/paris/bg.jpg'
+                ,design:function(){
+                    this.$el.find('.desc-pack').prepend('<img data-tap="pro" style="margin-right:10px;" src="'+imgDir+'/pro.png" align="left"/>');
+                },
+                data:[
+                    {
+                        src:imgDir + '/paris/day3/4.jpg'
+                        ,desc:PARIS_DESC[2]
+                    }
+                    ,{
+                        src:imgDir + '/paris/day3/3.jpg'
+                        ,desc:PARIS_DESC[2]
+
+                    }
+                    ,{
+                        src:imgDir + '/paris/day3/2.jpg'
+                        ,desc:PARIS_DESC[2]
+
+                    }
+                    ,{
+                        src:imgDir + '/paris/day3/1.jpg'
+                        ,desc:PARIS_DESC[2]
 
                     }
                 ]
@@ -79,6 +120,7 @@ Fui.Template.Paris = Fui.PageSlider.extend({
 
     design:function(){
         this.$el.append('<a class="beijing"><img data-tap="goToBeijing" src="'+imgDir+'/goToBeijing.png"/></a>');
+        this.$el.append('<a class="logo"></a>');
     },
     listeners:{
         gesture:function(e,gesture){
@@ -112,11 +154,21 @@ Fui.Template.Beijing = Fui.PageSlider.extend({
                 },
                 data:[
                     {
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/beijing/day1/5.jpg'
                         ,desc:BEIJING_DESC[0]
                     }
                     ,{
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/beijing/day1/4.jpg'
+                        ,desc:BEIJING_DESC[0]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day1/3.jpg'
+                        ,desc:BEIJING_DESC[0]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day1/2.jpg'
                         ,desc:BEIJING_DESC[0]
 
                     }
@@ -138,16 +190,36 @@ Fui.Template.Beijing = Fui.PageSlider.extend({
                 },
                 data:[
                     {
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/beijing/day2/7.jpg'
                         ,desc:BEIJING_DESC[1]
                     }
                     ,{
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/beijing/day2/6.jpg'
                         ,desc:BEIJING_DESC[1]
 
                     }
                     ,{
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/beijing/day2/5.jpg'
+                        ,desc:BEIJING_DESC[1]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day2/4.jpg'
+                        ,desc:BEIJING_DESC[1]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day2/3.jpg'
+                        ,desc:BEIJING_DESC[1]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day2/2.jpg'
+                        ,desc:BEIJING_DESC[1]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day2/1.jpg'
                         ,desc:BEIJING_DESC[1]
 
                     }
@@ -164,18 +236,159 @@ Fui.Template.Beijing = Fui.PageSlider.extend({
                 },
                 data:[
                     {
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/beijing/day3/9.jpg'
                         ,desc:BEIJING_DESC[2]
                     }
                     ,{
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/beijing/day3/8.jpg'
                         ,desc:BEIJING_DESC[2]
 
                     }
                     ,{
-                        src:imgDir + '/beijing/day1/1.jpg'
+                        src:imgDir + '/beijing/day3/7.jpg'
                         ,desc:BEIJING_DESC[2]
 
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day3/6.jpg'
+                        ,desc:BEIJING_DESC[2]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day3/5.jpg'
+                        ,desc:BEIJING_DESC[2]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day3/4.jpg'
+                        ,desc:BEIJING_DESC[2]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day3/3.jpg'
+                        ,desc:BEIJING_DESC[2]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day3/2.jpg'
+                        ,desc:BEIJING_DESC[2]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day3/1.jpg'
+                        ,desc:BEIJING_DESC[2]
+
+                    }
+                ]
+            }
+        /**
+         * 北京图片列表，第4天
+         * */
+            ,{
+                template:'Photos',
+                bg: imgDir +'/paris/bg.jpg'
+                ,design:function(){
+                    this.$el.find('.desc-pack').prepend('<img data-tap="pro" style="margin-left:10px;" src="'+imgDir+'/pro.png" align="right"/>');
+                },
+                data:[
+                    {
+                        src:imgDir + '/beijing/day4/10.jpg'
+                        ,desc:BEIJING_DESC[3]
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day4/9.jpg'
+                        ,desc:BEIJING_DESC[3]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day4/8.jpg'
+                        ,desc:BEIJING_DESC[3]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day4/7.jpg'
+                        ,desc:BEIJING_DESC[3]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day4/6.jpg'
+                        ,desc:BEIJING_DESC[3]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day4/5.jpg'
+                        ,desc:BEIJING_DESC[3]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day4/4.jpg'
+                        ,desc:BEIJING_DESC[3]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day4/3.jpg'
+                        ,desc:BEIJING_DESC[3]
+
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day4/2.jpg'
+                        ,desc:BEIJING_DESC[3]
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day4/1.jpg'
+                        ,desc:BEIJING_DESC[3]
+                    }
+                ]
+            }
+        /**
+         * 北京图片列表，第5天
+         * */
+            ,{
+                template:'Photos',
+                bg: imgDir +'/paris/bg.jpg'
+                ,design:function(){
+                    this.$el.find('.desc-pack').prepend('<img data-tap="pro" style="margin-left:10px;" src="'+imgDir+'/pro.png" align="right"/>');
+                },
+                data:[
+                    {
+                        src:imgDir + '/beijing/day5/10.jpg'
+                        ,desc:BEIJING_DESC[4]
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day5/9.jpg'
+                        ,desc:BEIJING_DESC[4]
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day5/8.jpg'
+                        ,desc:BEIJING_DESC[4]
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day5/7.jpg'
+                        ,desc:BEIJING_DESC[4]
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day5/6.jpg'
+                        ,desc:BEIJING_DESC[4]
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day5/5.jpg'
+                        ,desc:BEIJING_DESC[4]
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day5/4.jpg'
+                        ,desc:BEIJING_DESC[4]
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day5/3.jpg'
+                        ,desc:BEIJING_DESC[4]
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day5/2.jpg'
+                        ,desc:BEIJING_DESC[4]
+                    }
+                    ,{
+                        src:imgDir + '/beijing/day5/1.jpg'
+                        ,desc:BEIJING_DESC[4]
                     }
                 ]
             }
@@ -190,6 +403,7 @@ Fui.Template.Beijing = Fui.PageSlider.extend({
     },
     design:function(){
         this.$el.append('<a class="paris"><img data-tap="goToParis" src="'+imgDir+'/goToParis.png"/></a>');
+        this.$el.append('<a class="logo"></a>');
     },
     listeners:{
         gesture:function(e,gesture){

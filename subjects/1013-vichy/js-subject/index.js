@@ -1,10 +1,12 @@
 $(document).ready(function(){
+    var winHeight = $(window).height();
     //li
     var length = $("li.p").length;
     percent = 100/length;
     //bg
     $("#pack #c").css({
-        height:length*100+"%"
+//        height:length*100+"%"
+        height:length*winHeight+"px"
     });
     //bind touch
     var touchList = require("./touch_list");
@@ -22,7 +24,8 @@ $(document).ready(function(){
     $("#pack").find("li").each(function(i,item){
         var bg = $(item).attr("data-src");
         $(item).css({
-            height:percent+"%"
+//            height:percent+"%"
+            height:winHeight+"px"
         });
         if(bg!=""){
             $(item).css({

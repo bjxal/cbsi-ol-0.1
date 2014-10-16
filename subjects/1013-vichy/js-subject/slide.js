@@ -16,6 +16,7 @@ Fui.Slide = Fui.extend({
         me.next = false;
         me.pageCount = options.pageCount;
         me.per = options.percent;
+        me.winHeight = options.winHeight;
         me.fun = options.fun;
         if(me.curLi=="p1"){
             me.fun.p1();
@@ -88,20 +89,18 @@ Fui.Slide = Fui.extend({
     },
     _movePage_top:function(){
         var me = this;
-        var winHeight = $(window).height();
         me.index++;
         me.index = (me.index<me.pageCount) ? me.index : me.pageCount-1;
-        var trans = (me.index)*(-1)*winHeight+"px";
+        var trans = (me.index)*(-1)*me.winHeight+"px";
         me._transform(trans);
         me._getCur();
         me.fun[me.curLi]();
     },
     _movePage_btm:function(){
         var me = this;
-        var winHeight = $(window).height();
         --me.index;
         me.index = (me.index<0) ? 0 : me.index;
-        var trans_1 = (me.index)*(-1)*winHeight+"px";
+        var trans_1 = (me.index)*(-1)*me.winHeight+"px";
         me._transform(trans_1);
         me._getCur();
         me.fun[me.curLi]();

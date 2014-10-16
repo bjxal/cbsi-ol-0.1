@@ -18,7 +18,8 @@ $(document).ready(function(){
         pageCount:5,
         next_no:"p4",
         percent:percent,
-        fun:funList.funList
+        fun:funList.funList,
+        winHeight:winHeight
     });
     //bg
     $("#pack").find("li").each(function(i,item){
@@ -34,26 +35,4 @@ $(document).ready(function(){
             });
         }
     });
-    //±≥æ∞“Ù¿÷
-//    var audio = new Audio();
-//    audio.loop = true;
-//    audio.preload = "auto";
-//    audio.autoplay = true;
-//    audio.isLoadedmetadata = false;
-//    audio.touchstart = true;
-//    audio.audio = true;
-//    audio.src = getImgPath()+"/music.mp3";
-//    audio.load();
-    //mute
-//    $('#audio').on('touchend',function(e){
-//        var $this = $(this);
-//        e.stopPropagation();
-//        e.preventDefault();
-//        $this.toggleClass('stop');
-//        if($this.hasClass('stop')){
-//            audio.pause();
-//        }else{
-//            audio.play();
-//        }
-//    });
 });

@@ -18,6 +18,9 @@ module.exports = touchList = {
             var pop = $(e.target).data("pop");
             $(".pop_"+pop).fadeIn().siblings().find(".pop").fadeOut();
         });
+        touchList.touch_fun("video_cover",function(e){
+            touchList.youku();
+        });
     },
     p3_fun:function(){
         touchList.touch_fun("p3_btn",function(e){
@@ -97,5 +100,30 @@ module.exports = touchList = {
                 cbfun();
             }
         });
-    }
+    },
+    youku:function(){
+        console.log(YKU)
+    if(typeof YKU == 'undefined') return;
+//                if(!me.player){
+    var player = new YKU.Player('video',{
+        styleid: '0',
+        client_id: "3e9659d488a5a018",
+        vid: "XODAzOTUxMjEy",
+        autoplay: true,
+        show_related: false,
+        events:{
+            onPlayerReady: function(){ /*your code*/ },
+            onPlayStart: function(){ /*your code*/ },
+            onPlayEnd: function(){
+                player = null;
+            }
+        }
+    });
+//                }
+    setTimeout(function(){
+        try{
+            player.playVideo();
+        }catch(e){}
+    },10);
+}
 };

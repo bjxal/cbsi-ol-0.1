@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Expires" content="-1" />
+    <title>MG-数说</title>
+    <link rel="stylesheet" href="http://new-icon.ol-img.com/statics/common/css/fliza-0.1.css" media="screen" />
+    <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
+</head>
+<body>
+<div id="pack" class="pack page1">
+    <ul id="c" class="c">
+        <li class="p p1 cur" data-li="p1" data-index="0" data-src="p1/bg.jpg">
+            <span class="logo"></span>
+            <div class="tit">
+                <img src="img-subject/p1/tit_cd.png" class="cd"/>
+            </div>
+            <img src="img-subject/p1/bowen.png" class="bowen"/>
+            <img src="img-subject/p1/mv.png" class="mv"/>
+        </li>
+        <li class="p p2" data-li="p2" data-index="1" data-src="p2/bg.png">
+            <span class="tit"></span>
+            <img src="img-subject/p2/bg_2.png" class="bg_2"/>
+        </li>
+        <li class="p p3" data-li="p3" data-index="2" data-src="p3/bg.jpg">
+            <span class="tit tit_lf"></span>
+            <div class="area">
+                <div class="child sea">
+                    <img src="img-subject/p3/area/sea/main.png"/>
+                    <span class="mark"></span>
+                    <span class="word"></span>
+                </div>
+                <div class="child history">
+                    <img src="img-subject/p3/area/history/main.png"/>
+                    <span class="mark"></span>
+                    <span class="word"></span>
+                </div>
+                <div class="child mountain">
+                    <img src="img-subject/p3/area/mountain/main.png"/>
+                    <span class="mark"></span>
+                    <span class="word"></span>
+                </div>
+                <div class="child country">
+                    <img src="img-subject/p3/area/country/main.png"/>
+                    <span class="mark"></span>
+                    <span class="word"></span>
+                </div>
+            </div>
+        </li>
+        <li class="p p4" data-li="p4" data-index="3" data-src="p4/bg.png">
+        </li>
+        <li class="p p5" data-li="p5" data-index="4" data-src="p5/bg.png">
+        </li>
+        <li class="p p6" data-li="p6" data-index="5" data-src="p6/bg.png">
+        </li>
+        <li class="p p7" data-li="p7" data-index="6" data-src="p7/bg.png">
+        </li>
+        <li class="p p8" data-li="p8" data-index="7" data-src="p8/bg.png">
+        </li>
+        <li class="p p9" data-li="p9" data-index="8" data-src="p9/bg.png">
+        </li>
+        <li class="p p10" data-li="p10" data-index="9" data-src="p10/bg.png">
+        </li>
+        <li class="p p11" data-li="p11" data-index="10" data-src="p11/bg.png">
+        </li>
+        <li class="p p12" data-li="p12" data-index="11" data-src="p12/bg.png">
+        </li>
+        <li class="p p13" data-li="p13" data-index="12" data-src="p13/bg.png">
+        </li>
+        <li class="p p14" data-li="p14" data-index="13" data-src="p14/bg.png">
+        </li>
+        <li class="p p15" data-li="p15" data-index="14" data-src="p15/bg.png">
+        </li>
+    </ul>
+    <!--shadow-->
+    <div class="shadow" style="display: none;">
+        <div class="share_word"></div>
+    </div>
+    <!--arrow-->
+    <a class="arrow"><span></span></a>
+</div>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
+<script>
+    function getImgPath(){
+        var href = $('#css').attr('href').toString();
+        if(!/^http/.test(href)){
+            href = location.href;
+        }else{
+            href = href.substring(0,href.lastIndexOf('\/'));
+        }
+        return href.substring(0,href.lastIndexOf('\/'))+'/img-subject';
+    }
+    var WeixinData = {
+        "appid":"",
+        "img_url": getImgPath()+"/weixin.jpg",
+        "img_width": "200",
+        "img_height": "200",
+        "link": String(window.location.href),
+        "desc": '',
+        "title": '挑战都市难题 缔造理想新肌'
+    };
+    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function(argv){
+            WeixinJSBridge.invoke('sendAppMessage',WeixinData, function(res) {
+                //_report('send_msg', res.err_msg);
+            });
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function(argv){
+            WeixinJSBridge.invoke('shareTimeline',WeixinData, function(res) {
+                switch(res.err_msg){
+                    case 'share:timeline:ok':
+                        break;
+                    case 'share:timeline:cancel':
+                        break;
+                }
+            });
+        });
+    }, false);
+</script>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/fliza-ui-0.1.min.js"></script>
+<script type="text/javascript" src="js-subject/slide.js"></script>
+<script type="text/javascript" src="js-subject/index@.js"></script>
+</body>
+</html>

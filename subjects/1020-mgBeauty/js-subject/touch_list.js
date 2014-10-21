@@ -1,52 +1,12 @@
 module.exports = touchList = {
     init:function(){
         var me = this;
-        me.p1_fun();
-        me.p2_fun();
-        me.p3_fun();
-        me.p4_fun();
-        me.p5_fun();
+        me.share_fun();
     },
-    p1_fun:function(){
-        touchList.touch_fun("p1_btn",function(){
-            //next
-            cover._movePage_top();
-        });
-    },
-    p2_fun:function(){
-        touchList.touch_fun("p2_btn",function(e){
-            var pop = $(e.target).data("pop");
-            $(".pop_"+pop).fadeIn().siblings().find(".pop").fadeOut();
-        });
-        touchList.touch_fun("video_cover",function(e){
-            touchList.youku();
-        });
-    },
-    p3_fun:function(){
-        touchList.touch_fun("p3_btn",function(e){
-            $(".pop_p3").fadeIn();
-        });
-    },
-    p4_fun:function(){
-    },
-    p5_fun:function(){
-        //link
-        touchList.touch_fun("btn_link",function(e){
-            window.location.href=$(e.target).data("link");
-        });
-        //share
-        touchList.touch_fun("btn_share",function(e){
+    share_fun:function(){
+        touchList.touch_fun("btn",function(){
             $(".shadow").fadeIn();
-        });
-        //go back
-        touchList.touch_fun("btn_back",function(e){
-//            window.location.reload();
-            cover._move_back();
-        });
-        //shadow
-        $(".shadow").on("touchend",function(){
-            $(this).fadeOut();
-        });
+        })
     },
     touch_fun:function(pname,cbfun){
         var default_mv = move_mv = {x:0};
@@ -80,7 +40,7 @@ module.exports = touchList = {
                     me.pop = false;
                 }
             });
-        $(".pop").on("touchend",function(){
+        $(".shadow").on("touchend",function(){
             $(this).fadeOut();
         });
     },

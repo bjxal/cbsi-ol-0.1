@@ -16,7 +16,7 @@ $(document).ready(function(){
         if(bg!=""){
             $(item).css({
                 background:"url("+getImgPath()+"/"+bg+") no-repeat center",
-                backgroundSize:"100% auto"
+                backgroundSize:"cover"
             });
         }
     });
@@ -28,7 +28,7 @@ $(document).ready(function(){
     cover = new Fui.Slide({
         el:"#pack",
         pageCount:16,
-        next_no:"p4",
+        next_no:"",
         percent:percent,
         fun:funList.funList,
         winHeight:winHeight

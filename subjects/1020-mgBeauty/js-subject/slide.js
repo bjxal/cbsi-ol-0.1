@@ -119,7 +119,7 @@ Fui.Slide = Fui.extend({
     },
     _arrow:function(){
         var me = this;
-        if(me.curLi=="p5" ||  me.curLi=="p6"){
+        if(me.curLi=="p16"){
             $(".arrow").delay(500).fadeOut();
         }
         else{

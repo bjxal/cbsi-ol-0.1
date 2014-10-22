@@ -21,7 +21,8 @@ module.exports = Fun = {
             "p12":me.p12_fun,
             "p13":me.p13_fun,
             "p14":me.p14_fun,
-            "p15":me.p15_fun
+            "p15":me.p15_fun,
+            "p16":me.p16_fun
         };
     },
     p1_fun:function(){
@@ -52,9 +53,9 @@ module.exports = Fun = {
     p4_fun:function(){
         setTimeout(function(){
             $(".p4 .tit").addClass("move").one("webkitTransitionEnd",function(){
-                $(".p4 .bag ").addClass("move").one("webkitTransitionEnd",function(){
-                    $(".p4 .bag .pro").addClass("move").one("webkitTransitionEnd",function(){
-                        $(".p4 .bag .tag").addClass("move");
+                $(".p4 .main ").addClass("move").one("webkitTransitionEnd",function(){
+                    $(".p4 .main .pro").addClass("move").one("webkitTransitionEnd",function(){
+                        $(".p4 .main .tag").addClass("move");
                     });
                 });
             });
@@ -93,7 +94,7 @@ module.exports = Fun = {
     p8_fun:function(){
         setTimeout(function(){
             $(".p8 .tit").addClass("move").one("webkitTransitionEnd",function(){
-                $(".p8 .tag").addClass("move");
+                $(".p8 .img").addClass("move");
             });
         },1000);
     },
@@ -115,7 +116,7 @@ module.exports = Fun = {
     p11_fun:function(){
         setTimeout(function(){
             $(".p11 .tit").addClass("move").one("webkitTransitionEnd",function(){
-                $(".p11 .tag").addClass("move");
+                $(".p11 .img").addClass("move");
             });
         },1000);
     },
@@ -150,5 +151,6 @@ module.exports = Fun = {
                 $(".p15 .rt").addClass("move");
             });
         },1000);
-    }
+    },
+    p16_fun:function(){}
 };

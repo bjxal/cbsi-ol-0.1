@@ -4,9 +4,20 @@ module.exports = touchList = {
         me.share_fun();
     },
     share_fun:function(){
-        touchList.touch_fun("btn",function(){
+        touchList.touch_fun("btn",function(e){
             $(".shadow").fadeIn();
-        })
+        });
+        touchList.touch_fun("shadow",function(e){
+            var tar = e.target;
+            var node = tar.nodeName.toLocaleLowerCase();
+            if(node=="a"){
+//                $(".sina_share").click();
+//                window.open($(tar).attr("href"),"_blank");
+            }
+            else{
+                $(".shadow").fadeOut();
+            }
+        });
     },
     touch_fun:function(pname,cbfun){
         var default_mv = move_mv = {x:0};
@@ -40,9 +51,6 @@ module.exports = touchList = {
                     me.pop = false;
                 }
             });
-        $(".shadow").on("touchend",function(){
-            $(this).fadeOut();
-        });
     },
     ajax_fun:function(url,data,cbfun){
         //ajax

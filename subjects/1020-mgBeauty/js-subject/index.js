@@ -9,16 +9,9 @@ $(document).ready(function(){
     });
     //bg
     $("#pack").find("li").each(function(i,item){
-        var bg = $(item).attr("data-src");
         $(item).css({
             height:winHeight+"px"
         });
-        if(bg!=""){
-            $(item).css({
-                background:"url("+getImgPath()+"/"+bg+") no-repeat center",
-                backgroundSize:"cover"
-            });
-        }
     });
     //bind touch
     var touchList = require("./touch_list");

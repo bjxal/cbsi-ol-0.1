@@ -3,16 +3,6 @@ $(document).ready(function(){
     //li
     var length = $("li.p").length;
     percent = 100/length;
-    //bg
-//    $("#pack #c").css({
-//        height:length*winHeight+"px"
-//    });
-    //bg
-//    $("#pack").find("li").each(function(i,item){
-//        $(item).css({
-//            height:winHeight+"px"
-//        });
-//    });
     //bind touch
     var touchList = require("./touch_list");
     touchList.init();
@@ -20,10 +10,22 @@ $(document).ready(function(){
     funList.init();
     cover = new Fui.Slide({
         el:"#pack",
-        pageCount:16,
+        pageCount:14,
         next_no:"",
         percent:percent,
         fun:funList.funList,
         winHeight:winHeight
+    });
+    //bg
+    $("#pack").find("li").each(function(i,item){
+        var bg = $(item).attr("data-src");
+        if(bg!=""){
+            $(item).css({
+                backgroundImage:"url("+getImgPath()+"/"+bg+")",
+                backgroundRepeat:"no-repeat",
+                backgroundPosition:"center bottom",
+                backgroundSize:"100% auto"
+            });
+        }
     });
 });

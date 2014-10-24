@@ -91,7 +91,7 @@ Fui.Slide = Fui.extend({
         var me = this;
         me.index++;
         me.index = (me.index<me.pageCount) ? me.index : me.pageCount-1;
-        var trans = (me.index)*(-100)+"%";
+        var trans = (me.index)*(-1)*me.winHeight+"px";
         me._transform(trans);
         me._getCur();
         me.fun[me.curLi]();
@@ -100,7 +100,7 @@ Fui.Slide = Fui.extend({
         var me = this;
         --me.index;
         me.index = (me.index<0) ? 0 : me.index;
-        var trans_1 = (me.index)*(-100)+"%";
+        var trans_1 = (me.index)*(-1)*me.winHeight+"px";
         me._transform(trans_1);
         me._getCur();
         me.fun[me.curLi]();
@@ -115,7 +115,7 @@ Fui.Slide = Fui.extend({
         var me = this;
         me.$el.find("li.p").eq(me.index).addClass("cur").siblings().removeClass("cur");
         me.curLi = me.$el.find("li.cur").attr("data-li");
-        setTimeout(function(){me.$el.find("li.p.cur").siblings().find(".move").removeClass("move");},1000);
+        setTimeout(function(){me.$el.find("li.p.cur").siblings().find(".ani").removeClass("ani");},1000);
     },
     _arrow:function(){
         var me = this;

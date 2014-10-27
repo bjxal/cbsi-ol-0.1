@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=gbk"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="keywords" content="Fresh 古源" />
+    <meta name="description" content="敬请访问" />
+    <meta name="author" content="330785652@qq.com"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <script src="http://new-icon.ol-img.com/statics/common/js/device.js"></script>
+    <title>Fresh 古源</title>
+    <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
+</head>
+<body>
+
+<div id="pack" class="pack"></div>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/handlebars-1.3.0.min.js"></script>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/fliza-0.21.min.js"></script>
+<!--<script type="text/javascript" src="js-subject/imports@.js"></script>-->
+
+<script type="text/javascript">
+    function ImgDir (p){
+        var href = $('#css').attr('href').toString();
+        if(!/^http/.test(href)){
+            href = location.href;
+        }else{
+            href = href.substring(0,href.lastIndexOf('\/'));
+        }
+        return href.substring(0,href.lastIndexOf('\/'))+'/img-subject'+p;
+    }
+    var Title = [
+        '','吕颖','凌丽芬','顾晨曦','吉良','吴淼','邓尘朵','白雯','MV','Miss沐夏','花帮黛黛'
+    ];
+    var Txt = [
+            ''
+        ,'作为模特，肌肤常常要受浓妆以及熬夜的困扰，古源面霜是我随身携带的护肤“法宝”之一'
+        ,'深夜码字最伤眼，而古源修护眼霜的存在使我的眼周现在依然紧致亮泽。'
+        ,'“品质闪耀在良好的传承”——我一直很认可《沉思录》中的这句话，这正如Fresh古源系列传承2000年前的人文情怀，以及依然坚持手工的品质，真是这个浮躁社会的护肤界的“福音”。'
+        ,'每次赶时装周的日子，我白天感受着时尚圈的快节奏和定制盛宴，晚上静静享受着古源系列带给我的定制护理和奢华私密的体验，感受极致修护和滋养的功效。'
+        ,'彩妆可能会为肌肤带来的困扰是需要在护肤环节中得到修护和解决的，而用Fresh古源系列来修护后的肌肤依旧饱满、紧致、有光泽，丝毫不影响上妆，肌肤质感也很好。'
+        ,'演员的光鲜背后常常需要高品质的呵护，古源精华油和面霜就是我的必备。精华油不仅可以单独使用，带来很好的修护和滋养功效，还可以滴入几滴到面霜，让面霜加快乳化。每天晚上给自己一点时间，感受精华油渗透到肌肤而后肌肤变得温润饱满，实在是惬意片刻。'
+        ,'古源面霜解除了我出外景主持时对肌肤状况的担忧，丰沛滋润的效果实在是令人赞叹。每次用的时候我都禁不住想象修士们亲手调制它的样子，仿若可以感同身受他们和时间对话的神圣。'
+        ,'从《沉思录》中感受马克·奥勒留的哲思智慧，就像从古源修护面霜中感受他作为一名帝王曾经带给角斗士们的抚慰关怀之心，除了给肌肤带去的愉悦感，我更对古老人文情怀的传承充满了敬意。'
+        ,'曾经整天在空调房内忙于工作而肌肤变得日益粗糙、松弛的我，自从用Fresh古源修护面膜搭配面霜护肤起，不但皮肤滋润了很多，整体肤质和肤色都得到了改善。'
+        ,'在天南地北跑通告的日子里，皮肤和心情都需要休憩，而如果脚步无法停滞，我就会选择用Fresh古源修护面霜与面膜来帮助皮肤解压，也让心灵歇息一会，静静享受属于自己的ME TIME。'
+    ];
+</script>
+<script type="text/javascript" src="js-subject/index.js"></script>
+
+<script type="text/javascript">
+    new Fui.Weixin({
+        title:'传奇极致 抗老臻品',
+        desc:null,
+        link: String(window.location.href),
+        img_url:ImgDir('/weixin.jpg')
+    });
+</script>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/youku-api.js"></script>
+
+</body>
+</html>

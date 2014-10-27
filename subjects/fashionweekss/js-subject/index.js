@@ -1,0 +1,73 @@
+
+Fui.Template.IMG_DIR = ImgDir('');
+
+var slider = new Fui.PageSlider({
+    el:'#pack',
+    curPage:0,
+    orient:'y',
+    design:function(){
+    },
+    listeners:{},
+    data:[
+        {
+            template:'Base',
+            bg:ImgDir('/p0/bg.jpg')
+            ,xtpl:'p0'
+        }
+        ,{
+            template:'Base',
+            bg:ImgDir('/p1/bg.jpg')
+            ,xtpl:'p1'
+        }
+        ,{
+            template:'Base',
+            bg:ImgDir('/p2/bg.jpg'),
+            xtpl:'p2'
+        }
+        ,{
+            template:'Base',
+            bg:ImgDir('/p3/bg.jpg'),
+            xtpl:'p3'
+        }
+        ,{
+            template:'Base',
+            xtpl:'p4'
+        }
+        ,{
+            template:'Base',
+            bg:ImgDir('/p5/bg.jpg')
+            ,xtpl:'p5'
+        }
+        ,{
+            template:'Base',
+            fg:ImgDir('/p6/head.png')
+            ,xtpl:'p6'
+        }
+        ,{
+            template:'Base',
+            bg:ImgDir('/p7/bg.png')
+            ,xtpl:'p7'
+        }
+        ,{
+            template:'Base',
+            bg:ImgDir('/p8/bg.jpg')
+            ,xtpl:'p8'
+        }
+        ,{
+            template:'Base',
+            bg:ImgDir('/p9/bg.jpg')
+            ,xtpl:'p9'
+        }
+        ,{
+            template:'Base',
+            bg:ImgDir('/p10/bg.jpg')
+            ,xtpl:'p10'
+        }
+        ,{
+            template:'Base',
+            bg:ImgDir('/tail.jpg')
+            ,xtpl:'tail'
+        }
+    ]
+});
+slider.render();

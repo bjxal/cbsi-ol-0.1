@@ -1,0 +1,162 @@
+@import "/fliza_modules/core/less/index";
+@import "/fliza_modules/templates/less/index";
+@import "/fliza_modules/popup/less/index";
+@import "/fliza_modules/PageSlider/less/index";
+.page1{
+  .p1-search{
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    top: 686px;
+    left: 340px;
+  }
+}
+.page2{
+  .p2video{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 260px;
+    top: 400px;
+  }
+  a.p2img{
+    position: absolute;
+    width: 200px;
+    height: 180px;
+    top: 660px;
+    &.p2img1{
+      left: 10px;
+    }
+    &.p2img2{
+      left: 220px;
+    }
+    &.p2img3{
+      left: 420px;
+    }
+
+  }
+
+}
+.page3{
+  .p3video{
+    position: absolute;
+    width: 250px;
+    height: 170px;
+    left: 320px;
+    top: 270px;
+  }
+  .p3-play{
+    left:350px;
+    top: 300px;
+    width: 300px;
+    height: 200px;
+  }
+  .p3img{
+    position: absolute;
+    z-index: 1;
+    &.img1{
+      left: 10px;
+      top: 780px;
+      width: 120px;
+      height: 120px;
+    }
+    &.img2{
+      left:130px;
+      top: 750px;
+      width: 140px;
+      height: 180px;
+    }
+    &.img3{
+      left: 270px;
+      top: 770px;
+      width: 150px;
+      height: 150px;
+      z-index: 2;
+    }
+    &.img4{
+      left: 370px;
+      top: 540px;
+      width: 100px;
+      height: 340px;
+    }
+    &.img5{
+      left: 460px;
+      top: 630px;
+      width: 80px;
+      height: 280px;
+    }
+    &.img6{
+      right:10px;
+      top: 800px;
+      width: 100px;
+      height: 150px;
+    }
+  }
+}
+.page5{
+  .share{
+    position: absolute;
+    width: 512px;
+    height: 100px;
+    left: 64px;
+    top: 566px;
+  }
+}
+
+.fui-popup{
+  .video-pack{
+    .close{
+      background-color: #bde5f5;
+    }
+  }
+}
+
+
+.module-photos{
+  .photos-arrow{
+    border-color: black;
+  }
+  .photos-pack{
+    >img{
+      width:450px;
+    }
+    .normal{
+      top:520px;
+      .transform(translate3d(-50%,-50%,0) rotate(10deg) scale(1));
+    }
+    &.focus{
+      opacity: 1;
+      .transform(translate3d(0,0,0) rotate(0deg) scale(1));
+    }
+  }
+  &.focus{
+
+  }
+  &.ani{
+    .photos-pack{
+      .normal{
+        opacity:1;
+        .transform(translate3d(-50%,-50%,0) scale(1) rotate(0deg));
+      }
+      .pre1{
+        opacity:1;
+        .transform(translate3d(-50%,-50%,0) scale(1) rotate(0deg));
+      }
+      .pre2{
+        opacity:1;
+        .transform(translate3d(-50%,-50%,0) scale(1) rotate(0deg));
+      }
+      .afterL{
+        opacity:0;
+        .transform(translate3d(-150%,-50%,0) scale(1) rotate(5deg));
+      }
+      .afterR{
+        opacity:0;
+        .transform(translate3d(100%,-50%,0) scale(1) rotate(-5deg));
+      }
+
+    }
+  }
+
+}
+

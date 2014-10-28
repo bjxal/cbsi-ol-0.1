@@ -49,38 +49,40 @@ var slider = new Fui.PageSlider({
     data:[
         {
             template:'Base'
-            ,bg:ImgDir('/p0/bg.jpg')
+//            ,bg:ImgDir('/p0/bg.jpg')
             ,xtpl:'p0'
         }
         ,{
             template:'Base'
-            ,bg:ImgDir('/p1/bg.jpg')
+//            ,bg:ImgDir('/p1/bg.jpg')
             ,xtpl:'p1'
         }
         ,{
             template:'Base'
-            ,bg:ImgDir('/p2/bg.jpg')
+//            ,bg:ImgDir('/p2/bg.jpg')
         }
         ,{
             template:'Base'
-            ,bg:ImgDir('/p3/bg.jpg')
+//            ,bg:ImgDir('/p3/bg.jpg')
             ,xtpl:'p3'
         }
         ,{
             template:'Base'
-            ,bg:ImgDir('/p4/bg.jpg')
+//            ,bg:ImgDir('/p4/bg.jpg')
         }
         ,{
             template:'Base'
-            ,bg:ImgDir('/p5/bg.jpg')
+//            ,bg:ImgDir('/p5/bg.jpg')
             ,xtpl:'p5'
         }
         ,{
             template:'Base'
-            ,bg:ImgDir('/p6/bg.jpg')
+//            ,bg:ImgDir('/p6/bg.jpg')
             ,xtpl:'p6'
         }
 
     ]
 });
 slider.render();
+
+//alert(window.document.width+','+window.document.height);

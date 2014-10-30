@@ -61,9 +61,9 @@ var slider = new Fui.PageSlider({
     ]
 });
 slider.render();
-
+var flag = true;
 setInterval(function(){
     var $imglist = slider.getPage(slider.get('curPage')).$el.find('.imglist');
-    if($imglist.length>0)
+    if($imglist.length>0 && flag==true)
         action($imglist.children().last(),'left');
 },2000);

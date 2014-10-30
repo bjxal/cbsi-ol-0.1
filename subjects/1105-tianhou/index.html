@@ -11,7 +11,7 @@
     <meta name="format-detection" content="telephone=no" />
 
     <script src="http://new-icon.ol-img.com/statics/common/js/device.js"></script>
-    <title>卡姿兰</title>
+    <title>谁是天后</title>
     <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
 </head>
 <body>
@@ -19,9 +19,31 @@
 <div id="pack" class="pack"></div>
 <script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/handlebars-1.3.0.min.js"></script>
-<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/fliza-0.22.min.js"></script>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/fliza/fliza-141029-1227.min.js"></script>
 <script type="text/x-handlebars-template" id="p0">
+    <img class="logo ani8 delay5 slide-in-up" data-src="{{IMG_DIR}}/p0/logo.png"/>
+    <img class="txt ani8 delay10 scale-in" data-src="{{IMG_DIR}}/p0/txt.png"/>
 </script>
+<!-- 1 -->
+<script type="text/x-handlebars-template" id="p1">
+    <p>我想要通过这个系列来表达，自由的意义对于那些懂得自我欣赏的女性是何等重要。穿着的风格不仅体现的是一种感觉，更是一种生活方式。女士这样谈到她的最新春夏系列。穿着的风格不仅体现的是一种感觉，更是一种生活方式。女士这样谈到她的最新春夏系列。</p>
+</script>
+<script type="text/x-handlebars-template" id="p1_list">
+    <a class="arrow l"></a>
+    <a class="arrow r"></a>
+    <div class="imglist">
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1_list/imglist/1.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1_list/imglist/1.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1_list/imglist/1.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1_list/imglist/1.jpg"/>
+    </div>
+    <div class="txt">
+        <img data-src="{{IMG_DIR}}/p1_list/name.png"/>
+        <p>我想要通过这个系列来表达，自由的意义对于那些懂得自我欣赏的女性是何等重要。是何等重要穿着的风格体觉穿着的风格体觉穿着的风格体觉。</p>
+    </div>
+</script>
+<!-- 2 -->
+
 <script type="text/javascript">
     var _dir = (function (){
         var href = $('#css').attr('href').toString();
@@ -43,6 +65,7 @@
 <script type="text/javascript">
     new Fui.Weixin({
         title:null,
+        title1:null,
         desc:null,
         link: String(window.location.href),
         img_url:ImgDir('/weixin.jpg')

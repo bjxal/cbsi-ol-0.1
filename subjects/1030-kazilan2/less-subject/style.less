@@ -1,4 +1,7 @@
 @import "/fliza_modules/fliza-ui/less/style";
+a:hover{
+  text-decoration: none;
+}
 .p{}
 .p0{
   .btn{
@@ -138,8 +141,41 @@
     }
   }
 }
-
+.p4-pop-view{
+  width:100%;
+  height: 100%;
+  position: relative;
+  .background(url(../img-subject/p4/form.png),cover,center top);
+  >input{
+    position: absolute;
+    border:0;
+    outline:0;
+    padding:0;
+    height:40px;
+    color:white;
+    font-size: 2em;
+    left: 213px;
+    width: 280px;
+    &.name{
+      top: 321px;
+    }
+    &.phone{
+      top: 263px;
+    }
+    &.address{
+      top: 379px;
+    }
+  }
+  .submit{
+    position: absolute;
+    width: 400px;
+    height: 60px;
+    left: 121px;
+    top: 482px;
+  }
+}
 .p4{
+  background-color: rgba(0,0,0,.75);
   >img{
     position: absolute;
   }

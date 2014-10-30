@@ -1,0 +1,85 @@
+@import "/fliza_modules/fliza-ui/less/style";
+#pack{
+  .p{}
+  .p0{
+    >img{
+      position: absolute;
+    }
+    .i1{
+      top: 500px;
+      left: 80px;
+      z-index: 2
+    }
+    .i2{
+      top: 450px;
+      left: 210px;
+      z-index: 1;
+    }
+    .i3{
+      top: 400px;
+      left: 340px;
+    }
+  }
+  .p1{
+    .inner{
+      margin-top: 50px;
+      margin-left: 15px;
+      position: relative;
+      display: none;
+      &.show{
+        display: block;
+      }
+      img{
+        position: absolute;
+        top:0;
+        left:0;
+        .transform(translate3d(0,0,0));
+        .transition(none);
+        opacity:1;
+        &.left,&.right{
+          .transition(all .4s);
+        }
+        &.left{
+          .transform(translate3d(-100%,0,0));
+          opacity:0;
+        }
+        &.right{
+          .transform(translate3d(100%,0,0));
+          opacity:0;
+        }
+      }
+    }
+    .tabs{
+      position: absolute;
+      right:12px;
+      top:50px;
+      >a{
+        display: block;
+        width:46px;
+        height: 158px;
+        &.t1{
+          .background(url(../img-subject/p1/tab/1.png));
+          &.on{
+            .background(url(../img-subject/p1/tab/1on.png));
+          }
+        }
+        &.t2{
+          .background(url(../img-subject/p1/tab/2.png));
+          &.on{
+            .background(url(../img-subject/p1/tab/2on.png));
+          }
+        }
+        &.t3{
+          .background(url(../img-subject/p1/tab/3.png));
+          &.on{
+            .background(url(../img-subject/p1/tab/3on.png));
+          }
+        }
+
+      }
+    }
+  }
+}
+
+//for iphone4,4s
+@media screen and (max-device-height: 480px){}

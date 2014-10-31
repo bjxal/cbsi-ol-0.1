@@ -12,6 +12,7 @@ $(document).ready(function(){
         el:"#pack",
         pageCount:14,
         next_no:"",
+        arrow_none:"p14",
         percent:percent,
         fun:funList.funList,
         winHeight:winHeight

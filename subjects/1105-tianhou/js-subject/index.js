@@ -39,7 +39,7 @@ Fui.Template.Model = Fui.Template.Base.extend({
 });
 var slider = new Fui.PageSlider({
     el:'#pack',
-    curPage:2,
+    curPage:1,
     listeners:{},
     data:[
         {
@@ -50,7 +50,7 @@ var slider = new Fui.PageSlider({
         //  No. 1
         ,{
             template:'Model',
-            bg:ImgDir('/p1/model.jpg'),
+//            bg:ImgDir('/p1/model.jpg'),
             xtpl:'p1'
         }
         ,{
@@ -58,6 +58,15 @@ var slider = new Fui.PageSlider({
             xtpl:'p1_list'
         }
         // No. 2
+        ,{
+            template:'Model',
+            bg:ImgDir('/p2/bg.jpg'),
+            xtpl:'p2'
+        }
+        ,{
+            template:'ModelPhotos',
+            xtpl:'p2_list'
+        }
     ]
 });
 slider.render();

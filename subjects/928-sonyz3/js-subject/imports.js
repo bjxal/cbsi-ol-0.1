@@ -1,5 +1,1 @@
-
-require('core');
-require('templates');
-require('PageSlider');
-require('weixin');
+require('fliza-ui');

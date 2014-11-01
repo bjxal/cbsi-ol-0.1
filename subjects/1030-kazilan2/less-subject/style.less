@@ -25,7 +25,6 @@ a:hover{
     }
     &.r{
       right: 20px;
-      -webkit-animation: yaobai 2s linear infinite;
     }
   }
   .photo-list{
@@ -223,15 +222,3 @@ a:hover{
 //for iphone4,4s
 @media screen and (max-device-height: 480px){}
 
-@-webkit-keyframes yaobai{
-  0%,100%{
-    .transform(translate3d(0,0,0));
-  }
-  25%{
-    .transform(translate3d(35%,0,0));
-
-  }
-  75%{
-    .transform(translate3d(-35%,0,0));
-  }
-}

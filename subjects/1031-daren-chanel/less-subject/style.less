@@ -79,6 +79,73 @@
       }
     }
   }
+
+  .p2{
+    .s{
+      .absolutefull();
+      .upload,.file{
+        position: absolute;
+        left:50%;
+        bottom: 5%;
+        margin-left: -103px;
+      }
+      .file{
+        opacity:0;
+        width: 206px;
+        height: 80px;
+        display: block;
+        z-index: 10;
+        padding:0;
+      }
+      >img{
+        position: absolute;
+        &.title{
+          top: 5%;
+          left: 50%;
+          margin-left:-237px;
+        }
+        &.info{
+          top: 27%;
+          left:50%;
+          margin-left: -136px;
+        }
+        &.prev{
+          left:5%;
+          bottom: 5%;
+        }
+        &.next,&.finish{
+          bottom: 5%;
+          right:5%;
+        }
+      }
+    }
+    .step1{
+
+    }
+    .step2{
+      display: none;
+      .photo{
+        position: absolute;
+        .transform(translate3d(0,0,0) scale(1));
+        width:200px;
+        left:50%;
+        margin-left: -100px;
+        top: 280px;
+      }
+      .event{
+        .absolutefull();
+      }
+    }
+  }
+}
+
+#slider{
+  .p{
+    >img{
+      position: absolute;
+    }
+
+  }
 }
 
 //for iphone4,4s

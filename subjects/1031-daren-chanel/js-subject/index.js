@@ -1,4 +1,4 @@
-require('fliza-ui');
+
 var flag1 = false;
 Fui.Template.IMG_DIR = ImgDir();
 Fui.Template.Page234 = Fui.Template.Base.extend({
@@ -60,7 +60,7 @@ Fui.Template.Page2 = Fui.Template.Base.extend({
                 var orient = exif.Orientation;
 
                 new MegaPixImage(file).render(
-                    $('canvas')[0]
+                    $('.photo')[0]
                     ,{
                         width:200,
                         orientation:orient
@@ -69,6 +69,18 @@ Fui.Template.Page2 = Fui.Template.Base.extend({
                         flag1 = true;
                         $el.children('.step1').fadeOut();
                         $el.children('.step2').fadeIn();
+                        var canvas = document.createElement('canvas');
+                        canvas.width = canvas.height = 400;
+                        var ctx = canvas.getContext('2d');
+                        var $s2 = $el.children('.step2');
+                        $(canvas).css({
+                            position:'absolute'
+                            ,opacity:0,
+                            zIndex:-1
+                        });
+                        $s2.append(canvas);
+                        me.canvas = canvas;
+                        me.ctx = ctx;
                     }
                 );
             };
@@ -99,7 +111,24 @@ Fui.Template.Page2 = Fui.Template.Base.extend({
                 gesture:'tap',
                 name:'p2finish',
                 callback:function(){
-                    new Fui.Popup().img(ImgDir('/share.png'));
+                    var template = $('.template')[0],
+                        face = $('.face')[0],
+                        photo = $('.photo')[0]
+                        ;
+                    var ss = /matrix\(([\d\,\.\-\s]*)\)/g.exec(getComputedStyle(photo,null).webkitTransform)[1].split(',')[5];
+                    me.ctx.clearRect(0,0,400,400);
+                    me.ctx.drawImage(photo,100,ss,200,300);
+                    me.ctx.drawImage(template,template.width/2-200,280,400,400,0,0,400,400);
+                    me.ctx.drawImage(face,template.width/2-200,280,400,400,0,0,400,400);
+
+                    var loading = new Fui.Popup().loading();
+                    $.post('/files/eventapi.php?c=Event&a=flashupload',{
+                        imgfile:me.canvas.toDataURL().substring('data:image/png;base64,'.length)
+                    },function(link){
+                        weixin.set('img_url',link);
+                        loading.hide();
+                        new Fui.Popup().img(ImgDir('/share.png'));
+                    });
                 }
             }
 
@@ -114,6 +143,7 @@ Fui.Template.Page2 = Fui.Template.Base.extend({
             cid:'inner',
             el:'#slider',
             orient:'x',
+            arrow:'left right',
             data:[
                 {
                     template:'Base',
@@ -129,7 +159,12 @@ Fui.Template.Page2 = Fui.Template.Base.extend({
                     template:'Base',
                     xtpl:'p24'
                 }
-            ]
+            ],
+            listeners:{
+                slide:function(index){
+                    $('.template').attr('src',$('img.bg')[index].src);
+                }
+            }
         }).render();
         var $event = $el.find('.step2 .event')
             ,$target=this.$el.find('.step2 .photo');
@@ -156,7 +191,7 @@ new Fui.Gravity({
     listeners:{
         shake:function(){
             if(flag1){
-                $('.face').attr('src',ImgDir('/p2/1/'+Math.ceil(Math.random()*4)+'_f.png'));
+                $('.face').attr('src','http://www.onlylady.com/div/img/chanel/'+Math.ceil(Math.random()*4)+'_f.png');
             }
         }
     }
@@ -165,7 +200,7 @@ new Fui.Gravity({
 var slider = new Fui.PageSlider({
     cid:'outer',
     el:'#pack',
-    curPage:2,
+    curPage:0,
     listeners:{},
     data:[
         {

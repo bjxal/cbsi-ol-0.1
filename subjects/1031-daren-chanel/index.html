@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="content-type" content="text/html;charset=gbk"/>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="keywords" content="Demo" />
-    <meta name="description" content="Êï¨ËØ∑ËÆøÈóÆ" />
+    <meta name="keywords" content="Chanel" />
+    <meta name="description" content="æ¥«Î∑√Œ " />
     <meta name="author" content="330785652@qq.com"/>
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="format-detection" content="telephone=no" />
 
     <script src="http://new-icon.ol-img.com/statics/common/js/device.js"></script>
-    <title>Âç°ÂßøÂÖ∞</title>
+    <title>Chanel</title>
     <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
 </head>
 <body>
@@ -64,10 +64,10 @@
         <!--<img class="next" data-tap="p2next" data-src="{{IMG_DIR}}/p2/next_btn.png"/>-->
     </div>
     <div class="s step2">
-        <canvas class="photo" width="200" height="315"></canvas>
+        <canvas class="photo" width="200" style="width:200px;"></canvas>
         <!--<img class="photo" data-src="{{IMG_DIR}}/p2/bg.jpg"/>-->
-        <img class="template" data-src="{{IMG_DIR}}/p2/1/1.png"/>
-        <img class="face" data-src="{{IMG_DIR}}/p2/1/1_f.png"/>
+        <img class="template" data-src="http://www.onlylady.com/div/img/chanel/1.png"/>
+        <img class="face" data-src="http://www.onlylady.com/div/img/chanel/1_f.png"/>
 
         <div class="event"></div>
 
@@ -78,16 +78,16 @@
     </div>
 </script>
 <script type="text/x-handlebars-template" id="p21">
-    <img class="bg" data-src="{{IMG_DIR}}/p2/1/1.png"/>
+    <img class="bg" data-src="http://www.onlylady.com/div/img/chanel/1.png"/>
 </script>
 <script type="text/x-handlebars-template" id="p22">
-    <img class="bg" data-src="{{IMG_DIR}}/p2/1/2.png"/>
+    <img class="bg" data-src="http://www.onlylady.com/div/img/chanel/2.png"/>
 </script>
 <script type="text/x-handlebars-template" id="p23">
-    <img class="bg" data-src="{{IMG_DIR}}/p2/1/3.png"/>
+    <img class="bg" data-src="http://www.onlylady.com/div/img/chanel/3.png"/>
 </script>
 <script type="text/x-handlebars-template" id="p24">
-    <img class="bg" data-src="{{IMG_DIR}}/p2/1/4.png"/>
+    <img class="bg" data-src="http://www.onlylady.com/div/img/chanel/4.png"/>
 </script>
 
 
@@ -106,11 +106,12 @@
         return _dir + p;
     }
 </script>
+<script type="text/javascript" src="js-subject/imports-1.min.js"></script>
 <!--<script type="text/javascript" src="js-subject/imports@.js"></script>-->
-<script type="text/javascript" src="js-subject/index@.js"></script>
+<script type="text/javascript" src="js-subject/index.js"></script>
 
 <script type="text/javascript">
-    new Fui.Weixin({
+    var weixin = new Fui.Weixin({
         title:null,
         desc:null,
         link: String(window.location.href),

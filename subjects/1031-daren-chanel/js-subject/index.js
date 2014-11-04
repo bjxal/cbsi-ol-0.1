@@ -115,20 +115,31 @@ Fui.Template.Page2 = Fui.Template.Base.extend({
                         face = $('.face')[0],
                         photo = $('.photo')[0]
                         ;
-                    var ss = /matrix\(([\d\,\.\-\s]*)\)/g.exec(getComputedStyle(photo,null).webkitTransform)[1].split(',')[5];
+                    var ss = /matrix\(([\d\,\.\-\s]*)\)/g.exec(getComputedStyle(photo,null).webkitTransform)[1].split(',');
+                    for(var i= 0,ln = ss.length;i<ln;i++){
+                        ss[i] = Number(ss[i]);
+                    }
                     me.ctx.clearRect(0,0,400,400);
-                    me.ctx.drawImage(photo,100,ss,200,300);
+                    me.ctx.save();
+                    var h = 200*photo.height/photo.width;
+                    me.ctx.translate((100+ss[4])+(1-ss[0])*100,ss[5]+(1-ss[0])*h/2);
+                    me.ctx.scale(ss[0],ss[0]);
+                    me.ctx.drawImage(photo,0,0,200,h);
+                    me.ctx.restore();
                     me.ctx.drawImage(template,template.width/2-200,280,400,400,0,0,400,400);
                     me.ctx.drawImage(face,template.width/2-200,280,400,400,0,0,400,400);
 
                     var loading = new Fui.Popup().loading();
-                    $.post('/files/eventapi.php?c=Event&a=flashupload',{
-                        imgfile:me.canvas.toDataURL().substring('data:image/png;base64,'.length)
-                    },function(link){
-                        weixin.set('img_url',link);
-                        loading.hide();
-                        new Fui.Popup().img(ImgDir('/share.png'));
-                    });
+                    setTimeout(function(){
+                        $.post('/files/eventapi.php?c=Event&a=flashupload',{
+                            imgfile:me.canvas.toDataURL().substring('data:image/png;base64,'.length)
+                        },function(link){
+                            weixin.set('img_url',link);
+                            loading.hide();
+                            new Fui.Popup().img(ImgDir('/share.png'));
+                        });
+                    },500);
+
                 }
             }
 
@@ -139,7 +150,7 @@ Fui.Template.Page2 = Fui.Template.Base.extend({
         var me = this
             ,$el = me.$el
         ;
-        new Fui.PageSlider({
+        var slider = new Fui.PageSlider({
             cid:'inner',
             el:'#slider',
             orient:'x',
@@ -165,7 +176,10 @@ Fui.Template.Page2 = Fui.Template.Base.extend({
                     $('.template').attr('src',$('img.bg')[index].src);
                 }
             }
-        }).render();
+        });
+        slider.render();
+//        slider.hide();
+
         var $event = $el.find('.step2 .event')
             ,$target=this.$el.find('.step2 .photo');
 
@@ -201,12 +215,35 @@ var slider = new Fui.PageSlider({
     cid:'outer',
     el:'#pack',
     curPage:0,
-    listeners:{},
+    listeners:{
+        slide:function(index){
+//            if(index == 2){
+//                $('#slider').css({
+//                    position:'absolute',
+//                    top:0,
+//                    left:0
+//                }).show();
+//            }
+        }
+    },
     data:[
         {
             template:'Base',
             bg:ImgDir('/p0/bg.jpg'),
-            xtpl:'p0'
+            xtpl:'p0',
+            getGestureItems:function(e,$tar){
+                return [
+                    {
+                        gesture:'tap',
+                        name:'book',
+                        callback:function(e,$tar,param){
+                            slider.toPage(1);
+                            $('.inner').eq(param).show().siblings('.inner').hide();
+                            $('.tabs').children().eq(param).addClass('on').siblings().removeClass('on');
+                        }
+                    }
+                ];
+            }
         }
         ,{
             template:'Page234',

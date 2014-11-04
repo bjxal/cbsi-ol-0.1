@@ -86,7 +86,7 @@
       .upload,.file{
         position: absolute;
         left:50%;
-        bottom: 5%;
+        bottom: 7%;
         margin-left: -103px;
       }
       .file{
@@ -99,6 +99,11 @@
       }
       >img{
         position: absolute;
+        display: block;
+//        z-index: 2;
+//        zoom:1;
+//        .transform(translate(0,0));
+//        vertical-align: top;
         &.title{
           top: 5%;
           left: 50%;
@@ -120,7 +125,10 @@
       }
     }
     .step1{
-
+      .slider{
+        position: absolute;
+        z-index: 1;
+      }
     }
     .step2{
       display: none;

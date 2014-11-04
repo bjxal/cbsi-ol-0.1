@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="content-type" content="text/html;charset=gbk"/>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="keywords" content="Demo" />
-    <meta name="description" content="æ•¬è¯·è®¿é—®" />
+    <meta name="description" content="¾´Çë·ÃÎÊ" />
     <meta name="author" content="330785652@qq.com"/>
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="format-detection" content="telephone=no" />
 
     <script src="http://new-icon.ol-img.com/statics/common/js/device.js"></script>
-    <title>å¡å§¿å…°</title>
+    <title>¿¨×ËÀ¼</title>
     <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
 </head>
 <body>
@@ -26,14 +26,7 @@
     <img class="arrow r ani arrow-right" data-src="{{IMG_DIR}}/p1/r_arrow.png"/>
     <div class="photo-list" id="photo-list" data-leftSwipe="p1list" data-rightSwipe="p1list">
         <div class="page page1" data-tap="p1item">
-            <img data-tap="p1item" class="item1" data-src="{{IMG_DIR}}/p1/1/1.jpg"/>
-            <img data-tap="p1item" class="item2" data-src="{{IMG_DIR}}/p1/1/2.jpg"/>
-            <img data-tap="p1item" class="item3" data-src="{{IMG_DIR}}/p1/1/3.jpg"/>
-            <img data-tap="p1item" class="item4" data-src="{{IMG_DIR}}/p1/1/4.jpg"/>
-            <img data-tap="p1item" class="item5" data-src="{{IMG_DIR}}/p1/1/5.jpg"/>
-            <img data-tap="p1item" class="item6" data-src="{{IMG_DIR}}/p1/1/6.jpg"/>
-        </div>
-        <div class="page page2" data-tap="p1item">
+
             <img data-tap="p1item" class="item1" data-src="{{IMG_DIR}}/p1/2/1.jpg"/>
             <img data-tap="p1item" class="item2" data-src="{{IMG_DIR}}/p1/2/2.jpg"/>
             <img data-tap="p1item" class="item3" data-src="{{IMG_DIR}}/p1/2/3.jpg"/>
@@ -41,6 +34,15 @@
             <img data-tap="p1item" class="item5" data-src="{{IMG_DIR}}/p1/2/5.jpg"/>
             <img data-tap="p1item" class="item6" data-src="{{IMG_DIR}}/p1/2/6.jpg"/>
         </div>
+        <div class="page page2" data-tap="p1item">
+            <img data-tap="p1item" class="item1" data-src="{{IMG_DIR}}/p1/1/1.jpg"/>
+            <img data-tap="p1item" class="item2" data-src="{{IMG_DIR}}/p1/1/2.jpg"/>
+            <img data-tap="p1item" class="item3" data-src="{{IMG_DIR}}/p1/1/3.jpg"/>
+            <img data-tap="p1item" class="item4" data-src="{{IMG_DIR}}/p1/1/4.jpg"/>
+            <img data-tap="p1item" class="item5" data-src="{{IMG_DIR}}/p1/1/5.jpg"/>
+            <img data-tap="p1item" class="item6" data-src="{{IMG_DIR}}/p1/1/6.jpg"/>
+        </div>
+
         <div class="page page3" data-tap="p1item">
             <img data-tap="p1item" class="item1" data-src="{{IMG_DIR}}/p1/3/1.jpg"/>
             <img data-tap="p1item" class="item2" data-src="{{IMG_DIR}}/p1/3/2.jpg"/>
@@ -60,7 +62,7 @@
     <img class="kiss kiss2" data-src="{{IMG_DIR}}/p3/kiss.png"/>
     <img class="kiss kiss3" data-src="{{IMG_DIR}}/p3/kiss.png"/>
     <img class="kiss kiss4" data-src="{{IMG_DIR}}/p3/kiss.png"/>
-    <a class="btn" data-tap="p3action">å¼€å§‹äº’åŠ¨</a>
+    <a class="btn" data-tap="p3action">¿ªÊ¼»¥¶¯</a>
 </script>
 <script type="text/x-handlebars-template" id="p4">
     <img class="qin ani delay5 popup" data-src="{{IMG_DIR}}/p4/qin.png"/>
@@ -73,8 +75,7 @@
 
 <script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/handlebars-1.3.0.min.js"></script>
-<!--<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/fliza/fliza-141029-1227.min.js"></script>-->
-<script type="text/javascript" src="js-subject/imports@.js"></script>
+<script type="text/javascript" src="js-subject/fliza-141104-1811.min.js"></script>
 
 <script type="text/javascript">
     var _dir = (function (){
@@ -88,15 +89,19 @@
     })();
     var ImgDir = function(p){
         return _dir + p;
-    }
+    };
+    var al = {
+        name:'ÇëÊäÈëĞÕÃû!',
+        phone:'ÇëÊäÈëÕıÈ·µÄµç»°ºÅÂë!!',
+        address:'ÇëÊäÈëµØÖ·!'
+    };
 </script>
-<script type="text/javascript" src="js-subject/index.js">
-
-</script>
+<script type="text/javascript" src="js-subject/index.js"></script>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/youku-api.js"></script>
 
 <script type="text/javascript">
     new Fui.Weixin({
-        title:'ä¸Elvaä¸€èµ·ç©è½¬å¡å§¿å…°å½©å¦†å‘¨',
+        title:'ÓëElvaÒ»ÆğÍæ×ª¿¨×ËÀ¼²Ê×±ÖÜ',
         desc:null,
         link: String(window.location.href),
         img_url:ImgDir('/weixin.jpg')

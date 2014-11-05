@@ -25,7 +25,6 @@ a:hover{
     }
     &.r{
       right: 20px;
-      -webkit-animation: yaobai 2s linear infinite;
     }
   }
   .photo-list{
@@ -54,8 +53,8 @@ a:hover{
         position: absolute;
         top:50%;
         left: 50%;
-        margin-left: -164px;
-        margin-top: -255px;
+        margin-left: -185px;
+        margin-top: -288px;
         border: white 10px solid;
         .transition(-webkit-transform .5s);
         .transform(scale(1) translate(0,0) translateZ(0));
@@ -97,7 +96,7 @@ a:hover{
     position: absolute;
     left: 50%;
     margin-left: -107px;
-    bottom: 50px;
+    bottom: 13%;
   }
 }
 .p3{
@@ -157,10 +156,10 @@ a:hover{
     left: 213px;
     width: 280px;
     &.name{
-      top: 321px;
+      top: 263px;
     }
     &.phone{
-      top: 263px;
+      top: 321px;
     }
     &.address{
       top: 379px;
@@ -219,19 +218,25 @@ a:hover{
     opacity:0;
   }
 }
+@-webkit-keyframes bottomArrow{
+  0%{
+    .transform(translate3d(0,25px,0) );
+    opacity:0;
+  }
+  60%{
+    .transform(translate3d(0,0,0) );
+    opacity:1;
+  }
+  75%{
+    .transform(translate3d(0,0,0) );
+    opacity:1;
+  }
 
+  100%{
+    .transform(translate3d(0,-15px,0));
+    opacity:0;
+  }
+}
 //for iphone4,4s
 @media screen and (max-device-height: 480px){}
 
-@-webkit-keyframes yaobai{
-  0%,100%{
-    .transform(translate3d(0,0,0));
-  }
-  25%{
-    .transform(translate3d(35%,0,0));
-
-  }
-  75%{
-    .transform(translate3d(-35%,0,0));
-  }
-}

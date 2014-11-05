@@ -3,6 +3,9 @@ p,div{
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+a,p,span{
+  outline: none;
+}
 #pack{
   position: relative;
   width: 640px;
@@ -29,8 +32,8 @@ p,div{
     top: 18%;
     text-align: center;
     >img{
-      height: 100%;
-      max-width: 100%;
+//      height: 100%;
+      width: 100%;
       display: none;
       margin: 0 auto;
     }
@@ -41,26 +44,25 @@ p,div{
     position: absolute;
     z-index: 3;
     top: 18%;
-    overflow: hidden;
     text-align: center;
     >img{
       display: none;
       position: relative;
-      height: 82%;
+      width: 84%;
       top: 9%;
       margin: 0 auto;
     }
   }
   .logo,.rotate{
     position: absolute;
-    width: 56%;
+    width: 48%;
     height: 30%;
     top: 35%;
-    left: 22%;
+    left: 26%;
     z-index: 4;
     text-align: center;
     >img{
-      height: 100%;
+      width: 100%;
       position: relative;
       margin: 0 auto;
     }
@@ -68,7 +70,7 @@ p,div{
   .rotate{
     >img{
       -webkit-transform: rotate(-28deg);
-      -webkit-transition: all linear 2s;
+      -webkit-transition: all linear 14s;
       &.ani{
         -webkit-animation:rotate_ani 14s linear infinite normal;
         @-webkit-keyframes rotate_ani{
@@ -141,4 +143,48 @@ p,div{
 }
 
 //for iphone4,4s
-@media screen and (max-device-height: 480px){}
+@media screen and (max-device-height: 480px){
+  #pack{
+    .wheel_bg{
+      top: 8%;
+    }
+    .word{
+      top: 8%;
+      >img{
+        top: 11%;
+      }
+    }
+    .logo,.rotate{
+      top: 28%;
+    }
+    .await{
+      bottom: 60px;
+    }
+    .link{
+      top: 8%;
+      >a{
+        &.link_1{
+          top: 10%;
+        }
+        &.link_2{
+          top: 40%;
+        }
+        &.link_3{
+          top: 78%;
+        }
+        &.link_4{
+          top: 95%;
+        }
+        &.link_5{
+          top: 78%;
+        }
+        &.link_6{
+          top: 40%;
+        }
+        &.link_7{
+          top: 10%;
+        }
+      }
+    }
+  }
+}

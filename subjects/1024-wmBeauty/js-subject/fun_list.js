@@ -27,7 +27,7 @@ module.exports = Fun = {
         setTimeout(function(){
             $(".p1 .bg").addClass("ani").one("webkitTransitionEnd",function(){
                 $(".p1 .line").addClass("ani").one("webkitTransitionEnd",function(){
-                    $(".p1 .cir").addClass("ani").one("webkitAnimationEnd",function(){
+                    $(".p1 .pop .item").addClass("ani").one("webkitAnimationEnd",function(){
                         $(".p1 .tit").addClass("ani");
                     });
                 });
@@ -69,10 +69,14 @@ module.exports = Fun = {
     },
     p7_fun:function(){
         setTimeout(function(){
-            $(".p7 .tit").addClass("move").one("webkitTransitionEnd",function(){
-                $(".p7 .item").addClass("move").one("webkitAnimationEnd",function(){
-                    $(".p7 .tag").addClass("move").one("webkitTransitionEnd",function(){
-                        $(".p7 .arrow_bg").addClass("move");
+            $(".p7 .tit").addClass("ani").one("webkitTransitionEnd",function(){
+                $(".p7 .item_1").addClass("ani").one("webkitTransitionEnd",function(){
+                    $(".p7 .item_2").addClass("ani").one("webkitTransitionEnd",function(){
+                        $(".p7 .item_3").addClass("ani").one("webkitTransitionEnd",function(){
+                            $(".p7 .item_4").addClass("ani").one("webkitTransitionEnd",function(){
+                                $(".p7 .item_5").addClass("ani");
+                            });
+                        });
                     });
                 });
             });
@@ -80,46 +84,41 @@ module.exports = Fun = {
     },
     p8_fun:function(){
         setTimeout(function(){
-            $(".p8 .tit").addClass("move").one("webkitTransitionEnd",function(){
-                $(".p8 .img").addClass("move");
+            $(".p8 .tit").addClass("ani").one("webkitTransitionEnd",function(){
+                $(".p8 .lf,.p8 .rt").addClass("ani");
             });
         },1000);
     },
     p9_fun:function(){
         setTimeout(function(){
-            $(".p9 .tit").addClass("move");
+            $(".p9 .tit").addClass("ani").one("webkitTransitionEnd",function(){
+                $(".p9 .pop .item").addClass("ani");
+            });
         },1000);
     },
     p10_fun:function(){
         setTimeout(function(){
-            $(".p10 .tit").addClass("move").one("webkitTransitionEnd",function(){
-                $(".p10 .lf").addClass("move");
-                $(".p10 .rt").addClass("move").one("webkitTransitionEnd",function(){
-                    $(".p10 .search").addClass("move");
-                });
-            });
+            $(".p10 .cir").addClass("ani");
         },1000);
     },
     p11_fun:function(){
         setTimeout(function(){
-            $(".p11 .tit").addClass("move").one("webkitTransitionEnd",function(){
-                $(".p11 .img").addClass("move");
+            $(".p11 .tit").addClass("ani").one("webkitTransitionEnd",function(){
+                $(".p11 .lf,.p11 .rt").addClass("ani");
             });
         },1000);
     },
     p12_fun:function(){
         setTimeout(function(){
-            $(".p12 .tit").addClass("move").one("webkitTransitionEnd",function(){
-                $(".p12 .item").addClass("move");
+            $(".p12 .tit").addClass("ani").one("webkitTransitionEnd",function(){
+                $(".p12 .lf,.p12 .rt").addClass("ani");
             });
         },1000);
     },
     p13_fun:function(){
         setTimeout(function(){
-            $(".p13 .tit").addClass("move").one("webkitTransitionEnd",function(){
-                $(".p13 .pro_1").addClass("move").one("webkitTransitionEnd",function(){
-                    $(".p13 .pro_2").addClass("move");
-                });
+            $(".p13 .tit").addClass("ani").one("webkitTransitionEnd",function(){
+                $(".p13 .list").addClass("ani");
             });
         },1000);
     },

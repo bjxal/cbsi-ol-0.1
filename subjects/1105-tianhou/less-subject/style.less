@@ -1,7 +1,11 @@
 @import "/fliza_modules/fliza-ui/less/style";
-
+p,div{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
 #pack{
-  .p{}
+  .p{
+  }
   .p0{
     >img{
       position: absolute;
@@ -19,6 +23,18 @@
     .logo{}
   }
   .model{
+    .name{
+      position: absolute;
+      left: 30px;
+      top: 160px;
+      z-index: 2;
+    }
+    .model_pic{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+    }
     p{
       position: absolute;
       bottom:0;
@@ -27,8 +43,9 @@
       background-color: rgba(0,0,0,.85);
       color:white;
       font-size: 2em;
-      padding:20px 20px 50px 20px;
+      padding:30px 30px 60px 30px;
       line-height: 1.5em;
+      z-index: 3;
     }
   }
   .photos{
@@ -91,8 +108,29 @@
         z-index: 1;
         top:110px;
         right:10px;
-        left:250px;
+        left:260px;
       }
+    }
+  }
+  .p3,.p7,.p11,.p15,.p19,.p23,.p27,.p31{
+    p{
+      padding: 30px 50% 30px 30px;
+      top: 40%;
+      bottom: auto;
+      z-index: 0;
+    }
+  }
+  .link{
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    top: 5%;
+    >a{
+      display: block;
+      width: 80%;
+      height: 25%;
+      position: relative;
+      margin: 0 auto;
     }
   }
 }

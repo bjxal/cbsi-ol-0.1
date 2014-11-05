@@ -24,6 +24,15 @@ img{
 a { color:#f6e9c2; }
 a:hover{ text-decoration: underline;}
 :focus { outline: none; } /* for Firefox */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
 #pack {
   position: fixed;
   top: 0;
@@ -61,8 +70,9 @@ a:hover{ text-decoration: underline;}
     .tit{
       display: block;
       width: 100%;
-      height: 100%;
+      height: auto;
       position: relative;
+      top: 5%;
       transition:all ease-in-out 1.5s;
       -webkit-transition:all ease-in-out 1.5s;
       opacity: 0;
@@ -70,6 +80,7 @@ a:hover{ text-decoration: underline;}
     .tit.ani{
       opacity: 1;
     }
+    /*left-right*/
     .lf,.rt{
       width: 100%;
       height: auto;
@@ -90,6 +101,7 @@ a:hover{ text-decoration: underline;}
     .rt.ani{
       right: 0;
     }
+    /*list*/
     .list{
       width: 100%;
       height: 0;
@@ -107,6 +119,98 @@ a:hover{ text-decoration: underline;}
     .list.ani{
       height: 80%;
     }
+    /*order*/
+    .order{
+      width: 100%;
+      height: 56%;
+      position: absolute;
+      top: 23%;
+      .item{
+        width: auto;
+        height: 40px;
+        position: relative;
+        left: -100%;
+        transition: all ease-in-out 1.5s;
+        -webkit-transition: all ease-in-out 1.5s;
+      }
+    }
+    /*pop*/
+    .pop{
+      width: 100%;
+      height: 70%;
+      position: absolute;
+      top: 23%;
+      .item{
+        width: auto;
+        height: 48%;
+        opacity: 0;
+        position: absolute;
+      }
+      .item_1{
+        left: 30px;
+        top: 0;
+      }
+      .item_2{
+        right: 9px;
+        top: 0;
+      }
+      .item_3{
+        left: 30px;
+        bottom: 0;
+      }
+      .item_4{
+        right: 35px;
+        bottom: 0;
+      }
+      .item.ani{
+        animation:popup 1.5s linear;
+        -webkit-animation:popup 1.5s linear;
+        animation-fill-mode:forwards;
+        -webkit-animation-fill-mode:forwards;
+        @-webkit-keyframes popup{
+          0%,50%{opacity:0;-webkit-transform:scale(0)}
+          70%{opacity:0.8;-webkit-transform:scale(1.5)}
+          80%{opacity:1;-webkit-transform:scale(.8)}
+          90%{opacity:1;-webkit-transform:scale(1.2)}
+          100%{opacity:1;-webkit-transform:scale(1)}
+        }
+      }
+    }
+    /*cir*/
+    .cir{
+      width: 81%;
+      height: auto;
+      position: absolute;
+      top: 1%;
+      left: 12%;
+      opacity: 0;
+    }
+    .cir.ani{
+      animation:popup 1.5s linear;
+      -webkit-animation:popup 1.5s linear;
+      animation-fill-mode:forwards;
+      -webkit-animation-fill-mode:forwards;
+      @-webkit-keyframes popup{
+        0%,50%{opacity:0;-webkit-transform:scale(0)}
+        70%{opacity:0.8;-webkit-transform:scale(1.5)}
+        80%{opacity:1;-webkit-transform:scale(.8)}
+        90%{opacity:1;-webkit-transform:scale(1.2)}
+        100%{opacity:1;-webkit-transform:scale(1)}
+      }
+    }
+//    .cir{
+//      width: 93%;
+//      height: auto;
+//      position: relative;
+//      top: 2%;
+//      left: 4%;
+//      opacity: 0;
+//      transition:all ease-in-out 1s;
+//      -webkit-transition:all ease-in-out 1s;
+//    }
+//    .cir.ani{
+//      opacity: 1;
+//    }
   }
   .p1{
     background-color: #f0f1e8;
@@ -135,25 +239,13 @@ a:hover{ text-decoration: underline;}
     .line.ani{
       opacity: 1;
     }
-    .cir{
+    .pop{
       width: 81%;
-      height: auto;
-      position: absolute;
       top: 1%;
       left: 12%;
-      opacity: 0;
-    }
-    .cir.ani{
-      animation:popup 1.5s linear;
-      -webkit-animation:popup 1.5s linear;
-      animation-fill-mode:forwards;
-      -webkit-animation-fill-mode:forwards;
-      @-webkit-keyframes popup{
-        0%,50%{opacity:0;-webkit-transform:scale(0)}
-        70%{opacity:0.8;-webkit-transform:scale(1.5)}
-        80%{opacity:1;-webkit-transform:scale(.8)}
-        90%{opacity:1;-webkit-transform:scale(1.2)}
-        100%{opacity:1;-webkit-transform:scale(1)}
+      .item{
+        width: 100%;
+        height: auto;
       }
     }
     .tit{
@@ -182,28 +274,12 @@ a:hover{ text-decoration: underline;}
     .cloud.ani{
       right: 0;
     }
-    .cir{
-      width: 93%;
-      height: auto;
-      position: absolute;
-      top: 2%;
-      left: 4%;
-      opacity: 0;
-      transition:all ease-in-out 1s;
-      -webkit-transition:all ease-in-out 1s;
-    }
-    .cir.ani{
-      opacity: 1;
-    }
-  }
-  .p3,.p4,.p5{
-    .tit{
-      width: 100%;
-      height: auto;
-      top: 5%;
-    }
   }
   .p4{
+    background-image: url(../img-subject/p4/bg.png);
+    background-size: 100%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
     .lf,.rt{
       top: 20%;
     }
@@ -211,18 +287,119 @@ a:hover{ text-decoration: underline;}
   .p5{
   }
   .p6{
-    .cir{
-      width: 96%;
+    background-image: url(../img-subject/p6/bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center bottom;
+    .building{
+      width: 100%;
       height: auto;
-      position: relative;
-      top: 2%;
-      margin: 0 auto;
-      opacity: 0;
-      transition:all ease-in-out 1s;
-      -webkit-transition:all ease-in-out 1s;
+      position: absolute;
+      bottom: 0;
     }
-    .cir.ani{
-      opacity: 1;
+    .pro{
+      width: auto;
+      height: 74px;
+      position: absolute;
+      top: 15px;
+      left: 40px;
+    }
+    .cir{
+      width: 93%;
+      left: 3%;
+    }
+  }
+  .p7{
+    .bg_blue{
+      display: block;
+      width: 100%;
+      height: 73px;
+      background-color: #486ead;
+      position: absolute;
+      bottom: 0;
+    }
+    .bg{
+      width: auto;
+      height: 80%;
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      z-index: 1;
+    }
+    .order{
+      z-index: 2;
+      .item_1{
+        top: 0;
+      }
+      .item_1.ani{
+        left: 10px;
+      }
+      .item_2{
+        top: 15%;
+      }
+      .item_2.ani{
+        left: 60px;
+      }
+      .item_3{
+        top: 20%;
+      }
+      .item_4{
+        top: 25%;
+      }
+      .item_5{
+        top: 30%;
+      }
+      .item_3.ani,.item_4.ani,.item_5.ani{
+        left: 25px;
+      }
+    }
+  }
+  .p8{
+    .lf{
+    }
+    .rt{
+      top: 38%;
+    }
+  }
+  .p9{
+  }
+  .p10{}
+  .p11{
+    .bg{
+      width: 100%;
+      height: auto;
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+    }
+    .main{
+      width: 100%;
+      height: 50%;
+      position: relative;
+      top: 8%;
+      background: url(../img-subject/p11/cir_bg.png) no-repeat center;
+      background-size: auto 95%;
+    }
+    .lf,.rt{
+      top: 0;
+    }
+  }
+  .p12{
+    .lf{
+      top: 50%;
+    }
+    .rt{
+      top: 20%;
+    }
+  }
+  .p13{
+    .list{
+      top: 15%;
+      transition: all ease-in-out 3s;
+      -webkit-transition: all ease-in-out 3s;
+      .item{
+        width: 100%;
+      }
     }
   }
   .p14{
@@ -233,7 +410,7 @@ a:hover{ text-decoration: underline;}
       width: 100%;
       height: 90%;
       position: absolute;
-      bottom: 10px;
+      bottom: 20px;
       background: url(../img-subject/share/main.png) no-repeat center;
       background-size: auto 100%;
       .btn{
@@ -341,68 +518,122 @@ a:hover{ text-decoration: underline;}
     }
   }
 }
-.jiathis_style_32x32 a {
-  display: block;
-  height: 100px;
-  width: 100px;
-  border: 1px red solid;
+.audio {
+   position: absolute;
+   bottom: 5%;
+   right: 5%;
+   width: 23px;
+   height: 23px;
+   border: 1px solid white;
+   border-radius: 50%;
+   z-index: 100;
+   span {
+     position: absolute;
+     display: block;
+     width: 12px;
+     height: 12px;
+     top: 4px;
+     left: 4px;
+     background-image: url(../img-subject/m-icon.png);
+     background-size: contain;
+     background-position: center center;
+     background-repeat: no-repeat;
+   }
+   .span {
+     z-index: 2;
+   }
+   .spanAni {
+     z-index: 1;
+     opacity: 1;
+     transform: scale(1);
+     -webkit-transform: scale(1);
+     -moz-transform: scale(1);
+     animation: music 0.45s linear infinite;
+     -webkit-animation: music 0.45s linear infinite;
+     -moz-animation: music 0.45s linear infinite;
+   }
+ }
+.audio.stop .spanAni {
+  animation: none;
+  -webkit-animation: none;
+  -moz-animation: none;
 }
-.jtico_tsina,.jtico_tqq {
-  opacity: 1;
+.audio.stop:after {
+  position: absolute;
+  content: ' ';
+  width: 1px;
+  height: 23px;
+  background-color: white;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  left: 50%;
+  top: 0;
+}
+@-webkit-keyframes music {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2);
+  }
 }
 @media screen and (max-device-height:480px){
   #c {
-    .p1{
-      .mv{
-        bottom: 0;
+    .p{
+      .cir{
+        width: 70%;
+        left: 15%;
+      }
+      .rt,.lf{
+        width: 90%;
       }
     }
-    .p2{
-      .tit{
-        height: 220px;
-      }
-      .bg_2{
-        bottom: -50px;
-      }
-    }
-    .p3,.p4,.p7,.p8,.p10,.p11,.p12{
-      .main{
-        bottom: 20px;
-      }
+    .p4{
+      background-image: url(http://10.19.12.22/subjects/1024-wmBeauty/img-subject/p4/bg_1.png);
     }
     .p5{
-      .main{
-        height: 290px;
-        bottom: 2px;
+      .list{
+        top: 24%;
       }
     }
     .p6{
-      .main{
-        bottom: 18px;
+      background-size: 90% auto;
+      .pro{
+        height: 64px;
+      }
+    }
+    .p7{
+      .bg{
+        bottom: 10px;
       }
     }
     .p9{
-      .tit{
-        height: 250px;
+      .pop{
+        top: 25%;
+      }
+    }
+    .p11{
+      .bg{
+        bottom: -20px;
+      }
+    }
+    .p12{
+      .rt{
+        top: 22%;
+      }
+      .lf{
+        top: 53%;
       }
     }
     .p13{
-      .main{
-        bottom: 8px;
-      }
-    }
-    .p14{
-      .main{
-        bottom: 0;
-        .rt,.lf{
-          background-size: auto 90%;
+      .list{
+        top: 17%;
+        .item{
+          width: 86%;
         }
-      }
-    }
-    .p15{
-      .main{
-        height: 325px;
-        bottom: 10px;
       }
     }
   }

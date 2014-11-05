@@ -39,7 +39,7 @@ Fui.Template.Model = Fui.Template.Base.extend({
 });
 var slider = new Fui.PageSlider({
     el:'#pack',
-    curPage:2,
+    curPage:0,
     listeners:{},
     data:[
         {
@@ -50,7 +50,7 @@ var slider = new Fui.PageSlider({
         //  No. 1
         ,{
             template:'Model',
-            bg:ImgDir('/p1/model.jpg'),
+//            bg:ImgDir('/p1/model.jpg'),
             xtpl:'p1'
         }
         ,{
@@ -58,12 +58,103 @@ var slider = new Fui.PageSlider({
             xtpl:'p1_list'
         }
         // No. 2
+        ,{
+            template:'Model',
+            bg:ImgDir('/p2/bg.jpg'),
+            xtpl:'p2'
+        }
+        ,{
+            template:'ModelPhotos',
+            xtpl:'p2_list'
+        }
+        // No. 3
+        ,{
+            template:'Model',
+            xtpl:'p3'
+        }
+        ,{
+            template:'ModelPhotos',
+            xtpl:'p3_list'
+        }
+        // No. 4
+        ,{
+            template:'Model',
+            bg:ImgDir('/p2/bg.jpg'),
+            xtpl:'p4'
+        }
+        ,{
+            template:'ModelPhotos',
+            xtpl:'p4_list'
+        }
+        // No. 5
+        ,{
+            template:'Model',
+            xtpl:'p5'
+        }
+        ,{
+            template:'ModelPhotos',
+            xtpl:'p5_list'
+        }
+        // No. 6
+        ,{
+            template:'Model',
+            bg:ImgDir('/p2/bg.jpg'),
+            xtpl:'p6'
+        }
+        ,{
+            template:'ModelPhotos',
+            xtpl:'p6_list'
+        }
+        // No. 7
+        ,{
+            template:'Model',
+            xtpl:'p7'
+        }
+        ,{
+            template:'ModelPhotos',
+            xtpl:'p7_list'
+        }
+        // No. 8
+        ,{
+            template:'Model',
+            bg:ImgDir('/p2/bg.jpg'),
+            xtpl:'p8'
+        }
+        ,{
+            template:'ModelPhotos',
+            xtpl:'p8_list'
+        }
+        // No. 9
+        ,{
+            template:'Model',
+            xtpl:'p9'
+        }
+        ,{
+            template:'ModelPhotos',
+            xtpl:'p9_list'
+        }
+        // No. 10
+        ,{
+            template:'Model',
+            bg:ImgDir('/p2/bg.jpg'),
+            xtpl:'p10'
+        }
+        ,{
+            template:'ModelPhotos',
+            xtpl:'p10_list'
+        }
+        // No. last
+        ,{
+            template:'Base',
+            bg:ImgDir('/p_last/bg.jpg'),
+            xtpl:'p_last'
+        }
     ]
 });
 slider.render();
-
+var flag = true;
 setInterval(function(){
     var $imglist = slider.getPage(slider.get('curPage')).$el.find('.imglist');
-    if($imglist.length>0)
+    if($imglist.length>0 && flag==true)
         action($imglist.children().last(),'left');
 },2000);

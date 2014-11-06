@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    //旋转
+//旋转
     index = 1;//默认背景索引
     deg = -(360/14)+360;//默认角度
     circle_num = 0;//指针转动圈数
@@ -7,11 +7,6 @@ $(document).ready(function(){
     var fun = new Fun();
     fun.init();
     fun.touchA($(".link a"));
-//    $(document).on("blur",function(){
-//        fun.clear();
-//    }).on("focus",function(){
-//        fun.init();
-//    });
 });
 var Fun = function(){};
 Fun.prototype = {
@@ -33,10 +28,11 @@ Fun.prototype = {
     },
     switchBg:function(){
         var $bg = $(".bg");
-        var $wheel = $(".wheel_bg");
+//        var $wheel = $(".wheel_bg");
         var $word = $(".word");
-        var wheel_index = index==1?1:2;
-        if(index!=1){
+//        var wheel_index = index==1?1:2;
+        var link_if = $(".link .link_"+index).attr("href");
+        if(link_if=="#"){
             $(".await").show();
         }
         else{
@@ -44,7 +40,7 @@ Fun.prototype = {
         }
         //显示指定索引的背景、文字
         $bg.find(".bg_"+index).css("display","block").siblings().css("display","none");
-        $wheel.find(".wheel_"+wheel_index).css("display","block").siblings().css("display","none");
+//        $wheel.find(".wheel_"+wheel_index).css("display","block").siblings().css("display","none");
         $word.find(".word_"+index).css("display","block").siblings().css("display","none");
     },
     rotate:function(){
@@ -101,7 +97,6 @@ Fun.prototype = {
     clear:function(){
         var me = this;
         //清除所有setInterval、setTimeout
-        console.log(interval)
         clearInterval(interval);
         clearInterval(bg_change);
         clearTimeout(st);

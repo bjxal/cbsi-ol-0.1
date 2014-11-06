@@ -11,6 +11,14 @@ var action = function($tar,type){
 Fui.Template.ModelPhotos = Fui.Template.Base.extend({
     design:function(){
         this.$el.addClass('photos');
+        this.$el.find(".imglist")
+            .on("touchstart",function(e){
+                flag = false;
+            })
+            .on("touchmove",function(e){})
+            .on("touchend",function(e){
+                flag = true;
+            });
     },
     getGestureItems:function(){
         var me = this;
@@ -45,7 +53,19 @@ var slider = new Fui.PageSlider({
         {
             template:'Base',
             bg:ImgDir('/p0/bg.jpg'),
-            xtpl:'p0'
+            xtpl:'p0',
+            design:function(){
+                var me = this;
+                me.$el.find(".txt").one("webkitTransitionEnd",function(){
+                    me.$el.find(".pop").fadeIn();
+                    setTimeout(function(){
+                        me.$el.find(".pop").fadeOut();
+                    },2000);
+                });
+                this.$el.find(".logo").on("touchend",function(){
+                    window.location.href = $(this).data("link");
+                });
+            }
         }
         //  No. 1
         ,{
@@ -152,9 +172,9 @@ var slider = new Fui.PageSlider({
     ]
 });
 slider.render();
-var flag = true;
-setInterval(function(){
+flag = true;
+sit = setInterval(function(){
     var $imglist = slider.getPage(slider.get('curPage')).$el.find('.imglist');
     if($imglist.length>0 && flag==true)
         action($imglist.children().last(),'left');
-},2000);
+},3000);

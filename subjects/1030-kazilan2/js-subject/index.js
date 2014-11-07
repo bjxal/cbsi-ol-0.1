@@ -28,9 +28,9 @@ var Page4 = Fui.Template.Base.extend({
                                 ,phone = $('#phone').val()
                                 ,address = $('#address').val()
                                 ;
-                            if(!name) return alert(al.name);
-                            if(!/^1\d{10}$/g.test(phone)) return alert(al.phone);
-                            if(!address) return alert(al.address);
+//                            if(!name) return alert(al.name);
+//                            if(!/^1\d{10}$/g.test(phone)) return alert(al.phone);
+//                            if(!address) return alert(al.address);
                             $.post(
                                 'http://www.onlylady.com/files/eventapi.php?c=EventApi&a=AddEvent&indexsId=545',
                                 {

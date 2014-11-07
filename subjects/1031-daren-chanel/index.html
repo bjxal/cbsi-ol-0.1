@@ -4,14 +4,14 @@
     <meta http-equiv="content-type" content="text/html;charset=gbk"/>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="keywords" content="时装周日记" />
+    <meta name="keywords" content="悦享巴黎旅记" />
     <meta name="description" content="敬请访问" />
     <meta name="author" content="330785652@qq.com"/>
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="format-detection" content="telephone=no" />
 
     <script src="http://new-icon.ol-img.com/statics/common/js/device.js"></script>
-    <title>时装周日记</title>
+    <title>悦享巴黎旅记</title>
     <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
 </head>
 <body>
@@ -26,6 +26,8 @@
     <img class="i3 ani8 delay5 bounce" data-tap="book@2" data-src="{{IMG_DIR}}/p0/3.png"/>
 </script>
 <script type="text/x-handlebars-template" id="p1">
+    <a class="arrow l"></a>
+    <a class="arrow r"></a>
     <div class="inner show">
         <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/jjj/8.jpg"/>
         <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/jjj/7.jpg"/>
@@ -37,6 +39,7 @@
         <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/jjj/1.jpg"/>
     </div>
     <div class="inner">
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/wumiao/5.jpg"/>
         <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/wumiao/4.jpg"/>
         <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/wumiao/3.jpg"/>
         <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/wumiao/2.jpg"/>
@@ -77,6 +80,9 @@
         <img class="finish" data-tap="p2finish" data-src="{{IMG_DIR}}/p2/finish_btn.png"/>
     </div>
 </script>
+<script type="text/x-handlebars-template" id="p3">
+    <a id="daren_link" href="http://beauty.onlylady.com/2014/1031/3581801.shtml"></a>
+</script>
 <script type="text/x-handlebars-template" id="p21">
     <img class="bg" data-src="http://www.onlylady.com/div/img/chanel/1.png"/>
 </script>
@@ -106,14 +112,14 @@
         return _dir + p;
     }
 </script>
-<!--<script type="text/javascript" src="js-subject/imports-1.min.js"></script>-->
-<script type="text/javascript" src="js-subject/imports@.js"></script>
+<script type="text/javascript" src="js-subject/imports-1.min.js"></script>
 <script type="text/javascript" src="js-subject/index.js"></script>
 
 <script type="text/javascript">
     var weixin = new Fui.Weixin({
-        title:null,
-        desc:null,
+        title:'Super Model，一拍即合',
+        title1:'悦享巴黎旅记',
+        desc:'Super Model，一拍即合',
         link: String(window.location.href),
         img_url:ImgDir('/weixin.jpg')
     });

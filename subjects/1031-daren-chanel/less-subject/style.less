@@ -1,4 +1,5 @@
 @import "/fliza_modules/fliza-ui/less/style";
+
 #pack{
   .p{}
   .p0{
@@ -21,6 +22,24 @@
     }
   }
   .p1{
+    .arrow{
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 45%;
+      border: 1px solid black;
+      z-index: 10;
+      border-right: 0;
+      border-bottom:0;
+      &.l{
+        left: 7%;
+        .animation(leftArrow 2s linear infinite);
+      }
+      &.r{
+        right: 15%;
+        .animation(rightArrow 2s linear infinite);
+      }
+    }
     .inner{
       margin-top: 50px;
       margin-left: 15px;
@@ -100,6 +119,7 @@
       >img{
         position: absolute;
         display: block;
+        .transform(translate3d(0,0,0) scale(1));
 //        z-index: 2;
 //        zoom:1;
 //        .transform(translate(0,0));
@@ -143,6 +163,18 @@
       .event{
         .absolutefull();
       }
+    }
+  }
+  .p3{
+    >a{
+      .background(url(../img-subject/p3/link.png));
+      position: absolute;
+      display: block;
+      width:325px;
+      height:106px;
+      left:50%;
+      .transform(translate(-50%,0));
+      bottom: 15%;
     }
   }
 }

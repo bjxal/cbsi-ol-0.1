@@ -1,6 +1,8 @@
 var imgDir = getImgPath();
 Fui.Template.IMG_DIR =imgDir;
-
+Fui.Audio({
+    src:imgDir+'/music.mp3'
+});
 
 Fui.Template.Page1 = Fui.Template.extend({
     className:'page1',
@@ -106,10 +108,10 @@ Fui.Template.Paris = Fui.PageSlider.extend({
             }
 
 
-            ,{
-                template:'Base',
-                bg:imgDir+'/share.jpg'
-            }
+//            ,{
+//                template:'Base',
+//                bg:imgDir+'/share.jpg'
+//            }
         ]
     },
 
@@ -294,10 +296,10 @@ Fui.Template.Beijing = Fui.PageSlider.extend({
 
 
 
-            ,{
-                template:'Base',
-                bg:imgDir+'/share.jpg'
-            }
+//            ,{
+//                template:'Base',
+//                bg:imgDir+'/share.jpg'
+//            }
         ]
     },
     design:function(){

@@ -150,7 +150,7 @@ Fui.Template.Page2 = Fui.Template.Base.extend({
         var me = this
             ,$el = me.$el
         ;
-        var slider = new Fui.PageSlider({
+        var slider1 = new Fui.PageSlider({
             cid:'inner',
             el:'#slider',
             orient:'x',
@@ -172,24 +172,32 @@ Fui.Template.Page2 = Fui.Template.Base.extend({
                 }
             ],
             listeners:{
+                gesture:function(e,gesture,$tar){
+                    if(gesture == 'upSwipe'){
+                        slider.toPage(3);
+                    }else if(gesture == 'downSwipe'){
+                        slider.toPage(1);
+                    }
+                },
                 slide:function(index){
                     $('.template').attr('src',$('img.bg')[index].src);
                 }
             }
         });
-        slider.render();
+        slider1.render();
 //        slider.hide();
 
         var $event = $el.find('.step2 .event')
             ,$target=this.$el.find('.step2 .photo');
 
         new Fui.View({
+            cid:'aaa',
             $el:$event,
             $target:$target,
             initialize:function(){
                 var me1 = this;
-
                 me1.event = new Fui.Event({
+                    stopPropagation:true,
                     draggable:true,
                     pinch:true,
                     hoster:me1
@@ -215,6 +223,10 @@ var slider = new Fui.PageSlider({
     cid:'outer',
     el:'#pack',
     curPage:0,
+    arrow:{
+        orient:'bottom',
+        without:[]
+    },
     listeners:{
         slide:function(index){
 //            if(index == 2){
@@ -238,7 +250,7 @@ var slider = new Fui.PageSlider({
                         name:'book',
                         callback:function(e,$tar,param){
                             slider.toPage(1);
-                            $('.inner').eq(param).show().siblings('.inner').hide();
+                            $('.inner').eq(param).addClass('show').siblings('.inner').removeClass('show');
                             $('.tabs').children().eq(param).addClass('on').siblings().removeClass('on');
                         }
                     }
@@ -255,7 +267,11 @@ var slider = new Fui.PageSlider({
 //            bg:ImgDir('/p2/bg.jpg'),
             xtpl:'p2'
         }
-
+        ,{
+            template:'Base',
+            bg:ImgDir('/p3/bg.jpg'),
+            xtpl:'p3'
+        }
     ]
 });
 slider.render();

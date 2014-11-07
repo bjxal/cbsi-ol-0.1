@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="keywords" content="Demo" />
+    <meta name="description" content="敬请访问" />
+    <meta name="author" content="330785652@qq.com"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="http://new-icon.ol-img.com/statics/common/js/device.js"></script>
+    <title>谁是天后</title>
+    <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
+</head>
+<body>
+<div id="pack" class="pack">
+    <!--bg-->
+    <div class="bg">
+        <img src="img-subject/bg/1.jpg" data-index="1" class="bg_1" style="display: block;"/>
+        <img src="img-subject/bg/2.jpg" data-index="2" class="bg_2"/>
+        <img src="img-subject/bg/3.jpg" data-index="3" class="bg_3"/>
+        <img src="img-subject/bg/4.jpg" data-index="4" class="bg_4"/>
+        <img src="img-subject/bg/5.jpg" data-index="5" class="bg_5"/>
+        <img src="img-subject/bg/6.jpg" data-index="6" class="bg_6"/>
+        <img src="img-subject/bg/7.jpg" data-index="7" class="bg_7"/>
+    </div>
+    <!--wheel_bg-->
+    <div class="wheel_bg">
+        <img src="img-subject/wheel/1.png" data-index="1" class="wheel_1"/>
+    </div>
+    <!--word-->
+    <div class="word">
+        <img src="img-subject/word/1.png" data-index="1" class="word_1" style="display: block;"/>
+        <img src="img-subject/word/2.png" data-index="2" class="word_2"/>
+        <img src="img-subject/word/3.png" data-index="3" class="word_3"/>
+        <img src="img-subject/word/4.png" data-index="4" class="word_4"/>
+        <img src="img-subject/word/5.png" data-index="5" class="word_5"/>
+        <img src="img-subject/word/6.png" data-index="6" class="word_6"/>
+        <img src="img-subject/word/7.png" data-index="7" class="word_7"/>
+    </div>
+    <!--logo-->
+    <div class="logo">
+        <img src="img-subject/logo/logo.png" class="logo_c"/>
+    </div>
+    <!--rotate-->
+    <div class="rotate">
+        <img src="img-subject/logo/rotate.png" class="rotate_c"/>
+    </div>
+    <!--link-->
+    <div class="link">
+        <a href="#" class="link_1" data-index="1"></a>
+        <a href="#" class="link_2" data-index="2"></a>
+        <a href="#" class="link_3" data-index="3"></a>
+        <a href="#" class="link_4" data-index="4"></a>
+        <a href="#" class="link_5" data-index="5"></a>
+        <a href="#" class="link_6" data-index="6"></a>
+        <a href="#" class="link_7" data-index="7"></a>
+    </div>
+    <!--await-->
+    <div class="await">
+        <img src="img-subject/await.png" class="await_c"/>
+    </div>
+</div>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    var _dir = (function (){
+        var href = $('#css').attr('href').toString();
+        if(!/^http/.test(href)){
+            href = location.href;
+        }else{
+            href = href.substring(0,href.lastIndexOf('\/'));
+        }
+        return href.substring(0,href.lastIndexOf('\/'))+'/img-subject';
+    })();
+    var ImgDir = function(p){
+        p = p||'';
+        return _dir + p;
+    }
+</script>
+<script type="text/javascript" src="js-subject/index_bit.js"></script>
+
+<script type="text/javascript">
+    function getImgPath(){
+        var href = $('#css').attr('href').toString();
+        if(!/^http/.test(href)){
+            href = location.href;
+        }else{
+            href = href.substring(0,href.lastIndexOf('\/'));
+        }
+        return href.substring(0,href.lastIndexOf('\/'))+'/img-subject';
+    }
+    var WeixinData = {
+        "appid":"",
+        "img_url": getImgPath()+"/weixin.jpg",
+        "img_width": "200",
+        "img_height": "200",
+        "link": String(window.location.href),
+        "desc": '朋友圈分享-描述内容',
+        "title": '朋友圈分享-标题内容'
+    };
+    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function(argv){
+            WeixinJSBridge.invoke('sendAppMessage',WeixinData, function(res) {
+                //_report('send_msg', res.err_msg);
+            });
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function(argv){
+            WeixinJSBridge.invoke('shareTimeline',WeixinData, function(res) {
+                switch(res.err_msg){
+                    case 'share:timeline:ok':
+                        break;
+                    case 'share:timeline:cancel':
+                        break;
+                }
+            });
+        });
+    }, false);
+</script>
+</body>
+</html>

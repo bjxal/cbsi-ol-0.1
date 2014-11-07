@@ -1,25 +1,61 @@
-
+require('fliza-ui');
+require('./template');
 Fui.Template.IMG_DIR = ImgDir();
 
 var slider = new Fui.PageSlider({
     el:'#pack',
-    curPage:0,
+    curPage:4,
+    orient:'x',
+    templateID:'taidu',
     listeners:{},
     data:[
         {
-            template:'Base',
+            template:'COVER',
             bg:ImgDir('/p0/bg.jpg')
-            ,xtpl:'p0'
+            ,txt:'对于张扬不羁的豆蔻少女而言，绝对领域也许指的只是黑色丝袜的空白记忆。而对于端庄独立的成熟女性而言，绝对领域则是指一种更多的阅历、更多的经验，并承载岁月带来的无尽美丽。本期，Onlylady邀请到两位坐镇嘉宾，跨界美妆与时尚，带你领略充满前沿气息的态度饕餮。'
         }
         ,{
-            template:'Base',
-            bg:ImgDir('/p1/bg.jpg')
+            template:'PERSON'
+            ,bg:ImgDir('/p1/bg.jpg')
+            ,txt:ImgDir('/p1/txt.png')
         }
-         ,{
-            template:'Base',
-            bg:ImgDir('/p2/bg.jpg')
+        ,{
+            template:'PERSON'
+            ,bg:ImgDir('/p2/bg.jpg')
+            ,txt:ImgDir('/p2/txt.png')
         }
+        ,{
+            template:'QA',
+            qaTitle:'冰结时间',
+            qaName:'Vivian Lee 李菁',
+            qaList:[// new component ->> 评论列表 CommentList [Comment] << Article
+                {
+                    title:'Q: 在您心中，做到“冻龄”的关键是什么？',
+                    content:'A: 我曾经听过这样一句话，一个人到四十岁的时候就会发现，能为容貌负责的只有自己。我想这句话的意思是说，年轻鲜活的状态需要靠自己坚持不懈的努力，无论是保养自己的肌肤还是养护自己的心灵，所以大概“坚持”是最关键的吧。'
+                }
+                ,{
+                    title:'Q: 在您心中，做到“冻龄”的关键是什么？',
+                    content:'A: 我曾经听过这样一句话，一个人到四十岁的时候就会发现，能为容貌负责的只有自己。我想这句话的意思是说，年轻鲜活的状态需要靠自己坚持不懈的努力，无论是保养自己的肌肤还是养护自己的心灵，所以大概“坚持”是最关键的吧。'
+                }
+                ,{
+                    title:'Q: 在您心中，做到“冻龄”的关键是什么？',
+                    content:'A: 我曾经听过这样一句话，一个人到四十岁的时候就会发现，能为容貌负责的只有自己。我想这句话的意思是说，年轻鲜活的状态需要靠自己坚持不懈的努力，无论是保养自己的肌肤还是养护自己的心灵，所以大概“坚持”是最关键的吧。'
+                }
+                ,{
+                    title:'Q: 在您心中，做到“冻龄”的关键是什么？',
+                    content:'A: 我曾经听过这样一句话，一个人到四十岁的时候就会发现，能为容貌负责的只有自己。我想这句话的意思是说，年轻鲜活的状态需要靠自己坚持不懈的努力，无论是保养自己的肌肤还是养护自己的心灵，所以大概“坚持”是最关键的吧。'
+                }
 
+            ],
+            qaIcon:ImgDir('/p3/qa-icon.png'),
+            bg:ImgDir('/p3/bg.jpg')
+        }
+        ,{
+            template:'EDITOR_TALK'
+            ,bg:ImgDir('/p6/editor_img.png')
+            ,content:'从Vivian写满荣耀的履历看下来，说她是拼命工作的“女超人”一点都不为过。她曾经策划和领导了Olay玉兰油及Max Factor品牌近年来所有大型的公关活动和品牌传播项目，尽管在工作岗位上发挥地如此淋漓尽致，Vivian对于生活和自己状态的要求却严格如一，外表的美丽与得体自不必说，举手投足间散发出来的风情更是知性、端庄，尤其难得的是，忙碌到已经变成“空中飞人”的她也能使皮肤保持完美无瑕——肤色均匀清透，细腻白皙，看不到丝毫的倦容。身边的朋友都说Vivian就是一个名副其实的“冻龄女”，好像时光的流逝对她格外“开恩”，已经忘记了她的存在，任由她尽情挥洒自己的美好年华。在Vivian谈话的词汇间，能够明显地感觉出她对于“冻龄女”有更为扩展的理解。“让年华‘停驻’应该是一种内外兼修，外在让人觉得精致美丽，让包括五官在内的每一个细节都禁得起近观；同时，内在的修为也同样重要，时刻做到让自己的头脑充满新知和智慧的人才能有独特的人格魅力，永葆青春。”'
+
+        }
     ]
 });
 slider.render();

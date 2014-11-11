@@ -52,47 +52,5 @@ touchList = {
                     me.pop = false;
                 }
             });
-    },
-    ajax_fun:function(url,data,cbfun){
-        //ajax
-        $.ajax({
-            type:"POST",
-            cache:false,
-            asnyc:false,
-            data:data,
-            url:url,
-            dataType:"json",
-            success:function(){
-                cbfun();
-            },
-            error:function(){
-                cbfun();
-            }
-        });
-    },
-    youku:function(){
-        console.log(YKU)
-		if(typeof YKU == 'undefined') return;
-	//                if(!me.player){
-		var player = new YKU.Player('video',{
-			styleid: '0',
-			client_id: "3e9659d488a5a018",
-			vid: "XODAzOTUxMjEy",
-			autoplay: true,
-			show_related: false,
-			events:{
-				onPlayerReady: function(){ /*your code*/ },
-				onPlayStart: function(){ /*your code*/ },
-				onPlayEnd: function(){
-					player = null;
-				}
-			}
-		});
-	//                }
-		setTimeout(function(){
-			try{
-				player.playVideo();
-			}catch(e){}
-		},10);
-	}
+    }
 };

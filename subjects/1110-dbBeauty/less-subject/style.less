@@ -70,7 +70,6 @@ audio:not([controls]) {
       height: auto;
       position: absolute;
       top: 20%;
-      z-index: 1000;
     }
     .tit {
       display: block;
@@ -81,6 +80,7 @@ audio:not([controls]) {
       left: -100%;
       transition: all ease-in-out 1.5s;
       -webkit-transition: all ease-in-out 1.5s;
+      z-index: 1000;
     }
     .tit.ani {
       left: 0;
@@ -478,13 +478,13 @@ audio:not([controls]) {
     }
   }
   .p13{
-    .list{
-      top: 15%;
-      transition: all ease-in-out 3s;
-      -webkit-transition: all ease-in-out 3s;
-      .item{
-        width: 100%;
-      }
+    background-color: #09c9a9;
+    .bg{
+      height: 85%;
+      top: 0;
+    }
+    .lf,.rt{
+      top: 14%;
     }
   }
   .p14{
@@ -668,41 +668,20 @@ audio:not([controls]) {
 @media screen and (max-device-height:480px){
   #c {
     .p{
-      .cir{
-        width: 70%;
-        left: 15%;
+      .tit{
+        top: 2%;
       }
       .rt,.lf{
         width: 90%;
       }
-    }
-    .p4{
-      background-image: url(http://10.19.12.22/subjects/1024-wmBeauty/img-subject/p4/bg_1.png);
-    }
-    .p5{
-      .list{
-        top: 24%;
+      .tips{
+        bottom: 20px;
       }
     }
-    .p6{
-      background-size: 90% auto;
-      .pro{
-        height: 64px;
-      }
-    }
-    .p7{
-      .bg{
-        bottom: 10px;
-      }
-    }
-    .p9{
-      .pop{
-        top: 25%;
-      }
-    }
-    .p11{
-      .bg{
-        bottom: -20px;
+    .p10{
+      .p10_pop{
+        width: 90%;
+        left: 5%;
       }
     }
     .p12{
@@ -712,13 +691,13 @@ audio:not([controls]) {
       .lf{
         top: 53%;
       }
+      .down_5.ani {
+        top: 12%;
+      }
     }
     .p13{
-      .list{
-        top: 17%;
-        .item{
-          width: 86%;
-        }
+      .bg{
+        height: 86%;
       }
     }
   }

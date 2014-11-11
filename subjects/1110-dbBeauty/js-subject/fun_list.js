@@ -147,7 +147,9 @@ funList = {
     p13_fun:function(){
         setTimeout(function(){
             $(".p13 .tit").addClass("ani").one("webkitTransitionEnd",function(){
-                $(".p13 .list").addClass("ani");
+                $(".p13 .lf,.p13 .rt").addClass("ani").one("webkitTransitionEnd",function(){
+                    $(".p13 .tips").addClass("ani");
+                });
             });
         },1000);
     },

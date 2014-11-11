@@ -1,7 +1,8 @@
+require('fliza-ui');
 var slider = new Fui.PageSlider({
     el:'#pack',
     curPage:0,
-    orient:'x',
+    orient:'y',
     listeners:{},
     data:[
         {

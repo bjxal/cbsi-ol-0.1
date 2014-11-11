@@ -1,7 +1,17 @@
+@import "/fliza_modules/core/less/utils";
 @import "/fliza_modules/fliza-ui/less/style";
-.p{}
-.p0{
+.p{
+  &.p0{
+    .txt{
+      .absolutefull();
+      >p{
+        width: 1000px;
+        font-size: 2em;
+      }
 
+    }
+  }
 }
+
 //for iphone4,4s
 @media screen and (max-device-height: 480px){}

@@ -79,14 +79,8 @@ funList = {
     p7_fun:function(){
         setTimeout(function(){
             $(".p7 .tit").addClass("ani").one("webkitTransitionEnd",function(){
-                $(".p7 .item_1").addClass("ani").one("webkitTransitionEnd",function(){
-                    $(".p7 .item_2").addClass("ani").one("webkitTransitionEnd",function(){
-                        $(".p7 .item_3").addClass("ani").one("webkitTransitionEnd",function(){
-                            $(".p7 .item_4").addClass("ani").one("webkitTransitionEnd",function(){
-                                $(".p7 .item_5").addClass("ani");
-                            });
-                        });
-                    });
+                $(".p7 .top,.p7 .btm").addClass("ani").one("webkitTransitionEnd",function(){
+                    $(".p7 .tips").addClass("ani");
                 });
             });
         },1000);
@@ -94,33 +88,59 @@ funList = {
     p8_fun:function(){
         setTimeout(function(){
             $(".p8 .tit").addClass("ani").one("webkitTransitionEnd",function(){
-                $(".p8 .lf,.p8 .rt").addClass("ani");
+                $(".p8 .rt_1").addClass("ani").one("webkitTransitionEnd",function(){
+                    $(".p8 .lf_2").addClass("ani").one("webkitTransitionEnd",function(){
+                        $(".p8 .rt_3").addClass("ani").one("webkitTransitionEnd",function(){
+                            $(".p8 .tips").addClass("ani");
+                        });
+                    });
+                });
             });
         },1000);
     },
     p9_fun:function(){
         setTimeout(function(){
             $(".p9 .tit").addClass("ani").one("webkitTransitionEnd",function(){
-                $(".p9 .pop .item").addClass("ani");
+                $(".p9 .top,.p9 .btm").addClass("ani").one("webkitTransitionEnd",function(){
+                    $(".p9 .tips").addClass("ani");
+                });
             });
         },1000);
     },
     p10_fun:function(){
         setTimeout(function(){
-            $(".p10 .cir").addClass("ani");
+            $(".p10 .tit").addClass("ani").one("webkitTransitionEnd",function(){
+                $(".p10 .tips").addClass("ani");
+            });
         },1000);
     },
     p11_fun:function(){
         setTimeout(function(){
             $(".p11 .tit").addClass("ani").one("webkitTransitionEnd",function(){
-                $(".p11 .lf,.p11 .rt").addClass("ani");
+                $(".p11 .rt_1").addClass("ani").one("webkitTransitionEnd",function(){
+                    $(".p11 .lf_2").addClass("ani").one("webkitTransitionEnd",function(){
+                        $(".p11 .rt_3").addClass("ani").one("webkitTransitionEnd",function(){
+                            $(".p11 .tips").addClass("ani");
+                        });
+                    });
+                });
             });
         },1000);
     },
     p12_fun:function(){
         setTimeout(function(){
             $(".p12 .tit").addClass("ani").one("webkitTransitionEnd",function(){
-                $(".p12 .lf,.p12 .rt").addClass("ani");
+                $(".p12 .down_1").addClass("ani").one("webkitTransitionEnd",function(){
+                    $(".p12 .down_2").addClass("ani").one("webkitTransitionEnd",function(){
+                        $(".p12 .down_3").addClass("ani").one("webkitTransitionEnd",function(){
+                            $(".p12 .down_4").addClass("ani").one("webkitTransitionEnd",function(){
+                                $(".p12 .down_5").addClass("ani").one("webkitTransitionEnd",function(){
+                                    $(".p12 .tips").addClass("ani");
+                                });
+                            });
+                        });
+                    });
+                });
             });
         },1000);
     },

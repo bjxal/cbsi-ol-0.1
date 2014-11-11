@@ -80,24 +80,25 @@ Fun.prototype = {
 					window.location.href=me_t.link;
 				}
 				else{
-					//设置st
-					st = setTimeout(function(){
-						if(index>7) index=1;
-						me.switchBg(index);
-						//重设bg_change
-						bg_change = setInterval(function(){
-							index++;
-							if(index>7) index=1;
-							me.switchBg(index);
-						},2000);
-					},1000);
-					me.rotate(deg);
-					//重设interval
-					interval = setInterval(function(){
-						deg = deg+360;
-						me.rotate(deg);
-					},14000);
+				//设置st
+                st = setTimeout(function(){
+                    if(index>7) index=1;
+                    me.switchBg(index);
+                    //重设bg_change
+                    bg_change = setInterval(function(){
+                        index++;
+                        if(index>7) index=1;
+                        me.switchBg(index);
+                    },2000);
+                },1000);
+                me.rotate(deg);
+                //重设interval
+                interval = setInterval(function(){
+                    deg = deg+360;
+                    me.rotate(deg);
+                },14000);
 				}
+                
             });
     },
     clear:function(){

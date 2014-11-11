@@ -70,6 +70,7 @@ audio:not([controls]) {
       height: auto;
       position: absolute;
       top: 20%;
+      z-index: 1000;
     }
     .tit {
       display: block;
@@ -143,7 +144,7 @@ audio:not([controls]) {
       width: 100%;
       height: auto;
       position: absolute;
-      bottom: 10px;
+      bottom: 30px;
       opacity: 0;
     }
     .tips.ani{
@@ -333,86 +334,147 @@ audio:not([controls]) {
     }
   }
   .p7{
-    .bg_blue{
-      display: block;
-      width: 100%;
-      height: 73px;
-      background-color: #486ead;
-      position: absolute;
-      bottom: 0;
-    }
     .bg{
       width: auto;
-      height: 80%;
       position: absolute;
       bottom: 20px;
-      right: 0;
+      left: 0;
       z-index: 1;
+      height: 21%;
+      top: 42%;
     }
-    .order{
-      z-index: 2;
-      .item_1{
-        top: 0;
-      }
-      .item_1.ani{
-        left: 10px;
-      }
-      .item_2{
-        top: 15%;
-      }
-      .item_2.ani{
-        left: 60px;
-      }
-      .item_3{
-        top: 20%;
-      }
-      .item_4{
-        top: 25%;
-      }
-      .item_5{
-        top: 30%;
-      }
-      .item_3.ani,.item_4.ani,.item_5.ani{
-        left: 25px;
-      }
+    .top,.btm{
+      width: 50%;
+      height: auto;
+      position: absolute;
+      right: 16px;
+      z-index: 1;
+      transition: top ease-in-out 1s;
+      -webkit-transition: top ease-in-out 1s;
+    }
+    .top{
+      width: 53%;
+      left: 16px;
+      top: 100%;
+    }
+    .top.ani{
+      top: 35%;
+    }
+    .btm{
+      top: -100%;
+    }
+    .btm.ani{
+      top: 32%;
     }
   }
   .p8{
-    .lf{
-    }
-    .rt{
-      top: 38%;
+    .lf,.rt{
+      top: 10%;
     }
   }
   .p9{
-  }
-  .p10{}
-  .p11{
     .bg{
+      width: auto;
+      height: 70%;
+      position: absolute;
+      top: 15%;
+      right: 0;
+      z-index: 1;
+    }
+    .top,.btm{
       width: 100%;
       height: auto;
       position: absolute;
+      left: 0;
+      z-index: 2;
+      transition: top ease-in-out 1s;
+      -webkit-transition: top ease-in-out 1s;
+    }
+    .top{
+      top: 100%;
+      z-index: 0;
+    }
+    .top.ani{
+      top: 12%;
+    }
+    .btm{
+      top: -100%;
+    }
+    .btm.ani{
+      top: 50%;
+    }
+    .tips{
+      z-index: 2;
+    }
+  }
+  .p10{
+    .p10_pop{
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 17%;
+    }
+  }
+  .p11{
+    .bg{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: auto;
       bottom: 0;
       z-index: -1;
     }
-    .main{
-      width: 100%;
-      height: 50%;
-      position: relative;
-      top: 8%;
-      background: url(../img-subject/p11/cir_bg.png) no-repeat center;
-      background-size: auto 95%;
-    }
     .lf,.rt{
-      top: 0;
+      top: 18%;
     }
   }
   .p12{
-    .lf{
-      top: 50%;
+    background-color: #09c9a9;
+    .down{
+      position: absolute;
+      top: -100%;
+      transition: all ease-in-out 1s;
+      -webkit-transition: all ease-in-out 1s;
     }
-    .rt{
-      top: 20%;
+    .down_1{
+      width: auto;
+      height: 36%;
+      left: 30px;
+    }
+    .down_1.ani{
+      top: 44%;
+    }
+    .down_2{
+      width: auto;
+      height: 46%;
+      right: 40px;
+    }
+    .down_2.ani{
+      top: 36%;
+    }
+    .down_3{
+      width: auto;
+      height: 26%;
+      right: 33px;
+    }
+    .down_3.ani{
+      top: 8%;
+    }
+    .down_4{
+      width: auto;
+      height: 28%;
+      left: 20px;
+    }
+    .down_4.ani{
+      top: 8%;
+    }
+    .down_5{
+      width: 64%;
+      height: auto;
+      left: 18%;
+    }
+    .down_5.ani{
+      top: 16%;
     }
   }
   .p13{

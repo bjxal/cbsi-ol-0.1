@@ -313,6 +313,10 @@ audio:not([controls]) {
       overflow: hidden;
       transition: all ease-in-out 1.5s;
       -webkit-transition: all ease-in-out 1.5s;
+      >img{
+        height: 255px;
+        margin: 0 auto;
+      }
     }
     .txt.ani{
       height: 90%;
@@ -413,6 +417,12 @@ audio:not([controls]) {
       height: auto;
       position: absolute;
       top: 17%;
+      opacity: 0;
+      transition: all linear 1s;
+      -webkit-transition: all linear 1s;
+    }
+    .p10_pop.ani{
+      opacity: 1;
     }
   }
   .p11{
@@ -480,7 +490,7 @@ audio:not([controls]) {
   .p13{
     background-color: #09c9a9;
     .bg{
-      height: 85%;
+      height: 90%;
       top: 0;
     }
     .lf,.rt{
@@ -669,19 +679,59 @@ audio:not([controls]) {
   #c {
     .p{
       .tit{
-        top: 2%;
+        top: 4%;
       }
       .rt,.lf{
-        width: 90%;
+        width: 85%;
       }
       .tips{
         bottom: 20px;
       }
     }
+    .p2{
+      .rotate{
+        width: 82%;
+        left: 9%;
+      }
+    }
+    .p2,.p3,.p7{
+      .tit{
+        top: 1%;
+      }
+      .txt{
+        >img{
+          height: 225px;
+        }
+      }
+    }
+    .p6{
+      .lf,.rt{
+        width: 100%;
+      }
+    }
+    .p7{
+      .bg{
+        top: 43%;
+        width: 100%;
+      }
+      .top.ani,.btm.ani{
+        top: 31%;
+      }
+    }
+    .p9{
+      .btm.ani{
+        top: 40%;
+      }
+    }
     .p10{
       .p10_pop{
-        width: 90%;
+        width: 80%;
         left: 5%;
+      }
+    }
+    .p11{
+      .lf,.rt{
+        top: 14%;
       }
     }
     .p12{
@@ -692,12 +742,12 @@ audio:not([controls]) {
         top: 53%;
       }
       .down_5.ani {
-        top: 12%;
+        top: 6%;
       }
     }
     .p13{
       .bg{
-        height: 86%;
+        height: 95%;
       }
     }
   }

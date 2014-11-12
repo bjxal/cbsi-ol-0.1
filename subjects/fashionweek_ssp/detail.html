@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+    <title>拍出自己的时装周</title>
+    <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
+</head>
+<body class="detail">
+<div class="top_bar">
+    <div class="logo">
+        <a href="#" class="link_list"></a>
+    </div>
+    <div class="line"></div>
+</div>
+<!--list-->
+<div class="share_list">
+    <div class="list_top">
+        <span class="name">数码苹果已成为时尚圈的一份子，你还不快来参加随手拍为TA点个赞！</span>
+        <div class="shareIcon">
+            <!-- JiaThis Button BEGIN -->
+            <div class="jiathis_style_32x32">
+                <span class="jtico weixin"></span>
+                <a title="" class="jiathis_button_tsina"></a>
+                <a title="" class="jiathis_button_tqq"></a>
+                <span class="jtico save"></span>
+            </div>
+            <script type="text/javascript" >
+                var jiathis_config={
+                    summary:" #随手拍# 你准备好了吗！答对就有机会获得小礼品哟~ 每天还有无数次的抽奖机会",
+                    shortUrl:false,
+                    hideMore:false
+                }
+            </script>
+            <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+        </div>
+    </div>
+    <img src="./testImg/1.jpg"/>
+    <a href="http://www.onlylady.com/zhuanti/2014/0902/3547582.shtml" class="back"></a>
+</div>
+<div class="save_tips" style="display: none;">
+    <span class="weixin" style="display: none;">点击右上角分享到朋友圈!</span>
+    <span class="save" style="display: none;">长按图片即可保存!</span>
+</div>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
+<script>
+
+    function getImgPath(){
+        var href = $('#css').attr('href').toString();
+        if(!/^http/.test(href)){
+            href = location.href;
+        }else{
+            href = href.substring(0,href.lastIndexOf('\/'));
+        }
+        return href.substring(0,href.lastIndexOf('\/'))+'/img-subject';
+    }
+    var WeixinData = {
+        "appid":"",
+        "img_url": getImgPath()+'/weixin.jpg',
+        "img_width": "200",
+        "img_height": "200",
+        "link": String(window.location.href),
+        "desc": '我已经在巴黎拍了一组时尚大片，你还在想什么快来一起拍一张吧！',
+        "title": '你还不为我的时装周时尚大片点赞？拿奖品'
+    };
+    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function(argv){
+            WeixinJSBridge.invoke('sendAppMessage',WeixinData, function(res) {
+                //_report('send_msg', res.err_msg);
+            });
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function(argv){
+            WeixinJSBridge.invoke('shareTimeline',WeixinData, function(res) {
+                switch(res.err_msg){
+                    case 'share:timeline:ok':
+                        break;
+                    case 'share:timeline:cancel':
+                        break;
+                }
+            });
+        });
+    }, false);
+</script>
+<script type="text/javascript" src="./js-subject/detail.js"></script>
+</body>
+</html>

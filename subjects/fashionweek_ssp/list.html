@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+    <title>拍出自己的时装周</title>
+    <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
+</head>
+<body class="list">
+<div class="top_bar">
+    <div class="logo">
+        <div class="logo_1">
+            <span>最新</span><span class="arrow"></span>
+            <div class="px">
+                <span data-px="listbytime" data-word="最新">最新发布</span>
+                <span data-px="listbyvote" data-word="热门">热门照片</span>
+            </div>
+        </div>
+        <a href="http://www.onlylady.com/zhuanti/2014/0902/3547582.shtml" class="camera_icon">拍片</a>
+    </div>
+    <div class="line"></div>
+</div>
+<!--list-->
+<div class="share_list">
+    <ul id="shareList">
+    </ul>
+</div>
+<input type="hidden" id="page" value="1">
+<input type="hidden" id="px_val" value="listbytime"/>
+<div class="loading" style="display: none;">
+    <span class="loadIcon"></span>
+    <p>更多加载中……</p>
+</div>
+<div class="ad">
+    <a href="http://m.onlylady.com/www/2015fashionweek-newyork-ss.shtml"><img src="./img-subject/fashinweek.jpg"/></a><a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx71250adfdc9ff8ac&redirect_uri=http%3A%2F%2Fwww.onlylady.com%2Ffiles%2Feventapi.php%3Fc%3DWeixinQA%26a%3Dindex&response_type=code&scope=snsapi_base&state=state&from=singlemessage&isappinstalled=0#wechat_redirect"><img src="./img-subject/test.jpg"/></a>
+</div>
+<div class="bottom">
+    <img src="./img-subject/list/logo.png"/>
+    <p>CopyRight@1996-2014 OnlyLady<br>CBS Interactive</p>
+</div>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
+<script>
+    function getImgPath(){
+        var href = $('#css').attr('href').toString();
+        if(!/^http/.test(href)){
+            href = location.href;
+        }else{
+            href = href.substring(0,href.lastIndexOf('\/'));
+        }
+        return href.substring(0,href.lastIndexOf('\/'))+'/img-subject';
+    }
+    var WeixinData = {
+        "appid":"",
+        "img_url": getImgPath()+'/weixin.jpg',
+        "img_width": "200",
+        "img_height": "200",
+        "link": String(window.location.href),
+        "desc": '我已经在巴黎拍了一组时尚大片，你还在想什么快来一起拍一张吧！',
+        "title": '你还不为我的时装周时尚大片点赞？拿奖品'
+    };
+    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function(argv){
+            WeixinJSBridge.invoke('sendAppMessage',WeixinData, function(res) {
+                //_report('send_msg', res.err_msg);
+            });
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function(argv){
+            WeixinJSBridge.invoke('shareTimeline',WeixinData, function(res) {
+                switch(res.err_msg){
+                    case 'share:timeline:ok':
+                        break;
+                    case 'share:timeline:cancel':
+                        break;
+                }
+            });
+        });
+    }, false);
+</script>
+<script type="text/javascript" src="js-subject/list.js"></script>
+</body>
+</html>

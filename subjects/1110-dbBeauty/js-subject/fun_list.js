@@ -110,7 +110,9 @@ funList = {
     p10_fun:function(){
         setTimeout(function(){
             $(".p10 .tit").addClass("ani").one("webkitTransitionEnd",function(){
-                $(".p10 .tips").addClass("ani");
+                $(".p10 .p10_pop").addClass("ani").one("webkitTransitionEnd",function(){
+                    $(".p10 .tips").addClass("ani");
+                });
             });
         },1000);
     },

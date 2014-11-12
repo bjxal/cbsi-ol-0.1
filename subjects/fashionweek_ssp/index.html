@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+    <title>拍出自己的时装周</title>
+    <link id="css" rel="stylesheet" href="./css-subject/style.css" media="screen" />
+</head>
+<body>
+<!--导语-->
+<div class="cover" style="display: none;">
+    <div class="cover_top"></div>
+    <div class="cover_btm"></div>
+</div>
+<!--p1-->
+<div class="p1" style="display: block;">
+    <div class="p1_1">
+        <span class="flow flow_1"></span>
+        <span class="flow flow_2"></span>
+        <span class="flow flow_3"></span>
+        <span class="flow flow_4"></span>
+        <span class="flow flow_5"></span>
+        <span class="flow flow_6"></span>
+        <span class="flow flow_7"></span>
+        <span class="flow flow_8"></span>
+        <span class="flow flow_9"></span>
+        <span class="flow flow_10"></span>
+        <span class="flow flow_11"></span>
+        <span class="flow flow_12"></span>
+    </div>
+    <div class="p1_2">
+        <div class="camera_bg">
+            <div class="icon">
+                <input type="file" accept="image/*;capture=camera" id="touchInput">
+            </div>
+        </div>
+    </div>
+    <div class="p1_3"></div>
+    <a href="http://www.onlylady.com/files/eventapi.php?c=Event&a=Fw&action=list" class="view"></a>
+</div>
+<!--p2-->
+<div class="p2" style="display: none;">
+    <div class="camera">
+        <!--mb-->
+        <div class="mbList">
+            <img class="mb mb_1" src="./img-subject/mb/1.png" data-index="1"/>
+        </div>
+        <!--loading-->
+        <div class="loading"></div>
+        <!--canvas-->
+        <canvas id="canvas" width="320" height="420" style="width: 50%; height: 100%;"></canvas>
+        <img src="" style="display: none" id="result"/>
+    </div>
+    <div class="step_1" style="display: block;">
+        <div class="wrapper" id="wrapper">
+            <div class="scroller" id="scroller">
+                <ul id="iscroll_ul">
+                    <li class="cur">
+                        <img src="./img-subject/thumb/1.png"/>
+                        <span>纽约</span>
+                    </li>
+                    <li>
+                        <img src="./img-subject/thumb/2.png"/>
+                        <span>伦敦</span>
+                    </li>
+                    <li>
+                        <img src="./img-subject/thumb/3.png"/>
+                        <span>巴黎</span>
+                    </li>
+                    <li>
+                        <img src="./img-subject/thumb/4.png"/>
+                        <span>米兰</span>
+                    </li>
+                    <li>
+                        <img src="./img-subject/thumb/5.png"/>
+                        <span>街拍</span>
+                    </li>
+                    <li>
+                        <img src="./img-subject/thumb/6.png"/>
+                        <span>拼妆</span>
+                    </li>
+                    <li class="cur">
+                        <img src="./img-subject/thumb/7.png"/>
+                        <span>秀场</span>
+                    </li>
+                    <li>
+                        <img src="./img-subject/thumb/8.png"/>
+                        <span>潮品</span>
+                    </li>
+                    <li>
+                        <img src="./img-subject/thumb/9.png"/>
+                        <span>腾跃</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn">
+            <div class="reset">重拍</div>
+            <div class="ok">完成</div>
+            <input type="hidden" id="mb_id" value="1">
+        </div>
+    </div>
+    <div class="step_2" style="display: none;">
+        <span class="face"></span>
+        <p>点击下一步，生成时尚大片~还有机会中奖呢！</p>
+        <span class="lottery_btn">下一步</span>
+    </div>
+    <div class="step_3" style="display: none;">
+        <div class="step_3_1">
+            <h3 class="tit">填写信息赢大奖！</h3>
+            <div class="info">
+                <div class="nickname">
+                    <span>您的昵称</span>
+                    <input type="text" id="nickname" value="">
+                </div>
+                <div class="name">
+                    <span>真实姓名</span>
+                    <input type="text" id="name" value="">
+                </div>
+                <div class="mobile">
+                    <span>联系电话</span>
+                    <input type="text" id="mobile" value="">
+                </div>
+            </div>
+            <p class="tips" style="display: none;">出错啦! 你的信息填的不对哦~</p>
+            <div class="commit"></div>
+            <input type="hidden" id="photoUrl" value=""/>
+        </div>
+        <div class="step_3_2" style="display: none">
+            <p>您的信息正在提交中…<br>页面即将跳转到参与者列表页</p>
+            <p class="p_3">让小伙伴们快来帮你点赞吧！</p>
+        </div>
+    </div>
+</div>
+<!--p3-->
+<div class="p3" style="display: none;">
+    <div class="top_bar">
+        <div class="logo">
+            <div class="logo_1">
+                <span>最新</span><span class="arrow"></span>
+                <div class="px">
+                    <span data-px="listbytime" data-word="最新">最新发布</span>
+                    <span data-px="listbyvote" data-word="热门">热门照片</span>
+                </div>
+            </div>
+            <a href="http://www.onlylady.com/zhuanti/2014/0902/3547582.shtml" class="camera_icon"></a>
+        </div>
+        <div class="line"></div>
+    </div>
+    <!--list-->
+    <div class="share_list">
+        <ul id="shareList">
+            <!--<li>
+                <div class="list_top">
+                    <span class="name">数码苹果</span>
+                    <span class="time">2014-08-14  21:05</span>
+                    <span class="zan">12</span>
+                    <a class="share" href="http://www.onlylady.com/files/eventapi.php?c=Event&a=Fw&action=details&eventid=1848077" target="_self">分享</a>
+                </div>
+                <img src="http://new-icon.ol-img.com/statics/subjects/ssp/testImg/1.jpg"/>
+            </li>-->
+        </ul>
+    </div>
+    <input type="hidden" id="page" value="1">
+    <input type="hidden" id="px_val" value="listbytime"/>
+    <div class="loading" style="display: none;">
+        <span class="loadIcon"></span>
+        <p>更多加载中……</p>
+    </div>
+    <div class="ad">
+        <a href="http://m.onlylady.com/www/2015fashionweek-newyork-ss.shtml"><img src="./img-subject/fashinweek.jpg"/></a><a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx71250adfdc9ff8ac&redirect_uri=http%3A%2F%2Fwww.onlylady.com%2Ffiles%2Feventapi.php%3Fc%3DWeixinQA%26a%3Dindex&response_type=code&scope=snsapi_base&state=state&from=singlemessage&isappinstalled=0#wechat_redirect"><img src="./img-subject/test.jpg"/></a>
+    </div>
+    <div class="bottom">
+        <img src="./img-subject/list/logo.png"/>
+        <p>CopyRight@1996-2014 OnlyLady<br>CBS Interactive</p>
+    </div>
+</div>
+<!--p4-->
+<div class="p4" style="display: none;"></div>
+<!--list-->
+<!--page-->
+<div class="page">
+    <div class="wd">Step</div>
+    <div class="step_num">
+        <span class="pageNum page_1 cur"></span>
+        <span class="pageNum page_2"></span>
+        <span class="pageNum page_3"></span>
+        <span class="pageNum page_4"></span>
+    </div>
+</div>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
+<script>
+    function getImgPath(){
+        var href = $('#css').attr('href').toString();
+        if(!/^http/.test(href)){
+            href = location.href;
+        }else{
+            href = href.substring(0,href.lastIndexOf('\/'));
+        }
+        return href.substring(0,href.lastIndexOf('\/'))+'/img-subject';
+    }
+    var WeixinData = {
+        "appid":"",
+        "img_url": getImgPath()+'/weixin.jpg',
+        "img_width": "200",
+        "img_height": "200",
+        "link": String(window.location.href),
+        "desc": '我已经在巴黎拍了一组时尚大片，你还在想什么快来一起拍一张吧！',
+        "title": '你还不为我的时装周时尚大片点赞？拿奖品'
+    };
+    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function(argv){
+            WeixinJSBridge.invoke('sendAppMessage',WeixinData, function(res) {
+                //_report('send_msg', res.err_msg);
+            });
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function(argv){
+            WeixinJSBridge.invoke('shareTimeline',WeixinData, function(res) {
+                switch(res.err_msg){
+                    case 'share:timeline:ok':
+                        break;
+                    case 'share:timeline:cancel':
+                        break;
+                }
+            });
+        });
+    }, false);
+</script>
+<script type="text/javascript" src="./js-subject/iscroll.js"></script>
+<script type="text/javascript" src="./js-subject/megapix-image.js"></script>
+<script type="text/javascript" src="./js-subject/exif.js"></script>
+<script type="text/javascript" src="./js-subject/binaryajax.js"></script>
+<script type="text/javascript" src="./js-subject/uuid.js"></script>
+<script type="text/javascript" src="./js-subject/camera.js"></script>
+<script type="text/javascript" src="./js-subject/index.js"></script>
+</body>
+</html>

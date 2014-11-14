@@ -18,29 +18,51 @@
 <div id="pack" class="pack"></div>
 <script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/handlebars-1.3.0.min.js"></script>
-<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/fliza/fliza.min.js"></script>
+<!--<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/fliza/fliza.min.js"></script>-->
 <!--logo-->
 <img src="img-subject/logo.png" class="logo_new"/>
 <!--logo-->
 <!-- p0 -->
 <script type="text/x-handlebars-template" id="p0">
     <!--cover-->
-    <div class="p0_1">
-        <img data-src="{{IMG_DIR}}/p0/bg.jpg" class="bg"/>
-        <img data-src="{{IMG_DIR}}/p0/main.png" class="main"/>
-        <img data-src="{{IMG_DIR}}/p0/leaf_1.png" class="leaf leaf_1"/>
-        <img data-src="{{IMG_DIR}}/p0/leaf_2.png" class="leaf leaf_2"/>
-        <img data-src="{{IMG_DIR}}/p0/arrow_rt.png" class="arrow_rt"/>
-        <img data-src="{{IMG_DIR}}/p0/slide_word.png" class="word" data-leftSwipe="leaf" data-rightSwipe="leaf"/>
+    <div class="p0_1" style="display:none;">
+        <img data-src="{{IMG_DIR}}/p0/p0_1/bg.jpg" class="bg"/>
+        <img data-src="{{IMG_DIR}}/p0/p0_1/main.png" class="main"/>
+        <img data-src="{{IMG_DIR}}/p0/p0_1/leaf_1.png" class="leaf leaf_1"/>
+        <img data-src="{{IMG_DIR}}/p0/p0_1/leaf_2.png" class="leaf leaf_2"/>
+        <img data-src="{{IMG_DIR}}/p0/p0_1/arrow_rt.png" class="arrow_rt"/>
+        <img data-src="{{IMG_DIR}}/p0/p0_1/slide_word.png" class="word" data-leftSwipe="leaf" data-rightSwipe="leaf"/>
     </div>
     <!--cover-->
-    <!--p0-->
+    <!--p0_2-->
     <div class="p0_2">
-        <img data-src="{{IMG_DIR}}/p1/bg.jpg"/>
+        <img data-src="{{IMG_DIR}}/p0/p0_2/bg.jpg"/>
+        <img data-src="{{IMG_DIR}}/p0/p0_2/main.png" class="main"/>
+        <a href="javascript:void(0);" class="btn" data-tap="btn"></a>
     </div>
-    <!--p0-->
+    <!--p0_2-->
 </script>
-<!-- p0 -->
+<!-- p0 end -->
+<!--p1-->
+<script type="text/x-headlebars-template" id="p1">
+</script>
+<!-- p1 end -->
+<!--p2-->
+<script type="text/x-headlebars-template" id="p2">
+</script>
+<!-- p2 end -->
+<!--p3-->
+<!-- p3 end -->
+<!--p4-->
+<!-- p4 end -->
+<!--p5-->
+<!-- p5 end -->
+<!--p6-->
+<!-- p6 end -->
+<!--p7-->
+<!-- p7 end -->
+<!--p8-->
+<!-- p8 end -->
 <script type="text/javascript">
     var _dir = (function (){
         var href = $('#css').attr('href').toString();
@@ -57,7 +79,7 @@
     }
 </script>
 <!--<script type="text/javascript" src="js-subject/imports@.js"></script>-->
-<script type="text/javascript" src="js-subject/index.js"></script>
+<script type="text/javascript" src="js-subject/index@.js"></script>
 <script type="text/javascript">
     new Fui.Weixin({
         title:"朋友圈分享-标题内容",

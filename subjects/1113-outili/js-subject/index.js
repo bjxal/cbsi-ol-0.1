@@ -1,3 +1,4 @@
+require("fliza-ui");
 Fui.Template.IMG_DIR = ImgDir();
 
 var PAGE0 = Fui.Template.extend({
@@ -6,56 +7,50 @@ var PAGE0 = Fui.Template.extend({
         xtpl:'p0'
     },
     events:{
-        'change input':function(e){
-            var me = this
-                ,$el = me.$el
-                ;
-            e.stopPropagation();
-            var file = e.target.files[0];
-            if(!file)return;
-            var reader = new FileReader();
-            reader.readAsBinaryString(file);
-            reader.onloadend = function(){
-                var exif = EXIF.readFromBinaryFile(new BinaryFile(this.result)), html = [];
-                var orient = exif.Orientation;
-
-                new MegaPixImage(file).render(
-                    $('#p5c1')[0]
-                    ,{
-                        width:212,
-                        orientation:orient
-                    }
-                    ,function(){
-                        $(".p4 div.p4-popup").addClass("show");
-                        slider.set('lock',true);
-                    }
-                );
-            };
-        }
-    },
-    listeners:{
     },
     getGestureItems:function(){
-        function aa(e,$tar){
-            $(".word,.arrow_rt,.leaf_1,.leaf_2").addClass("ani_t");
+        function slide(e,$tar){
+            $(".p0_1 .word,.p0_1 .arrow_rt,.p0_1 .leaf_1,.p0_1 .leaf_2").addClass("ani_t").one("webkitTransitionEnd",function(){
+                setTimeout(function(){
+                    $(".p0_1").fadeOut(1000);
+                },3000);
+            });
         }
         return [
             {
                 gesture:'leftSwipe',
                 name:'leaf',
-                callback:aa
+                callback:slide
             }
             ,{
                 gesture:'rightSwipe',
                 name:'leaf',
-                callback:aa
+                callback:slide
             }
         ];
     }
 });
-
+var PAGE1 = Fui.Template.extend({
+    config:{
+        template:'PAGE1',
+        xtpl:'p1'
+    }
+    ,getGestureItems:function(){
+        return [
+            {
+                gesture:'tap',
+                name:'btn',
+                callback:function(){
+                    slider.toPage(1);
+                    slider.set("lock",false);
+                }
+            }
+        ]
+    }
+});
 Fui.Template.regTpl({
-    PAGE0:PAGE0
+    PAGE0:PAGE0,
+    PAGE1:PAGE1
 });
 
 var slider = new Fui.PageSlider({
@@ -69,7 +64,15 @@ var slider = new Fui.PageSlider({
     data:[
         {
             template:'PAGE0',
-            bg:ImgDir('/p0/bg.jpg')
+            bg:ImgDir('/p0/p0_1/bg.jpg')
+        }
+        ,{
+            template:'PAGE1',
+            bg:ImgDir('/p1/bg.jpg')
+        }
+        ,{
+            template:'PAGE1',
+//            bg:ImgDir('/p2/bg.jpg')
         }
     ]
 });

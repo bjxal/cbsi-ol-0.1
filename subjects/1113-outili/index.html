@@ -49,20 +49,92 @@
 <!-- p1 end -->
 <!--p2-->
 <script type="text/x-headlebars-template" id="p2">
+    <img data-src="{{IMG_DIR}}/p2/main.png" class="main"/>
+    <a href="javascript:void(0);" class="btn" data-tap="btn"></a>
 </script>
 <!-- p2 end -->
 <!--p3-->
+<script type="text/x-headlebars-template" id="p3">
+    <img data-src="{{IMG_DIR}}/p3/drag_2.png" class="drag_2"/>
+    <img data-src="{{IMG_DIR}}/p3/drag_1.png" data-leftSwipe="drag" class="drag_1"/>
+    <img data-src="{{IMG_DIR}}/p3/arrow_rt.png" class="arrow_rt"/>
+</script>
 <!-- p3 end -->
 <!--p4-->
+<script type="text/x-headlebars-template" id="p4">
+    <img data-src="{{IMG_DIR}}/p4/main.png" class="main"/>
+</script>
 <!-- p4 end -->
 <!--p5-->
+<script type="text/x-headlebars-template" id="p5">
+    <img data-src="{{IMG_DIR}}/p5/main.png" class="main"/>
+    <a href="http://v.youku.com/v_show/id_XODI1NTY4NzI4.html" class="video_link"></a>
+</script>
 <!-- p5 end -->
 <!--p6-->
+<script type="text/x-headlebars-template" id="p6">
+    <div class="form">
+        <img data-src="{{IMG_DIR}}/p6/main.png" class="main"/>
+        <input type="file" accept="image/*;capture=camera" id="touchInput_1">
+        <input type="file" accept="image/*;capture=camera" id="touchInput_2">
+        <input type="text" id="words">
+        <!--canvas-->
+        <div class="avt_1">
+            <!--<img src="" id="result_1"/>-->
+            <canvas id="canvas_1" style="width: 186px;"></canvas>
+        </div>
+        <div class="avt_2">
+            <!--<img src="" id="result_2"/>-->
+            <canvas id="canvas_2" style="width: 186px;"></canvas>
+        </div>
+    </div>
+</script>
 <!-- p6 end -->
 <!--p7-->
+<script type="text/x-headlebars-template" id="p7">
+    <div class="form">
+        <img data-src="{{IMG_DIR}}/p7/main.png" class="main"/>
+        <img data-src="{{IMG_DIR}}/p7/1.jpg" class="avt_1" data-index="1"/>
+        <img data-src="{{IMG_DIR}}/p7/2.jpg" class="avt_2" data-index="2"/>
+        <p class="words">餐后一杯红酒是我的紧致提升秘方!</p>
+        <a href="javascript:void(0);" class="next" data-tap="next"></a>
+        <a href="http://mp.weixin.qq.com/s?__biz=MjM5NzU4ODU3NA==&mid=201576825&idx=1&sn=79de50dc45f2e8d109dae4ba809559e9#rd" class="focus"></a>
+        <!--canvas-->
+        <canvas id="canvas_3" width="320" height="330"></canvas>
+        <!--canvas-->
+        <canvas id="canvas_4" width="320" height="330"></canvas>
+    </div>
+</script>
 <!-- p7 end -->
 <!--p8-->
+<script type="text/x-headlebars-template" id="p8">
+    <div class="form">
+        <div class="form_gx">
+            <img data-src="{{IMG_DIR}}/p8/gx.png" class="gx"/>
+            <input type="text" id="name">
+            <input type="text" id="phone">
+            <input type="text" id="addr">
+            <input type="text" id="mail">
+            <div id="submit" data-tap="submit"></div>
+        </div>
+        <div class="form_sorry" style="display: none;">
+            <img data-src="{{IMG_DIR}}/p8/sorry.png" class="sorry"/>
+            <input type="text" id="name">
+            <input type="text" id="phone">
+            <input type="text" id="mail">
+            <div id="submit" data-tap="submit"></div>
+        </div>
+    </div>
+</script>
 <!-- p8 end -->
+<!--p9-->
+<script type="text/x-headlebars-template" id="p9">
+    <div class="form">
+        <img data-src="{{IMG_DIR}}/p9/main.png" class="main"/>
+        <img data-src="{{IMG_DIR}}/p9/click_word.png" class="btn"/>
+    </div>
+</script>
+<!-- p9 end -->
 <script type="text/javascript">
     var _dir = (function (){
         var href = $('#css').attr('href').toString();

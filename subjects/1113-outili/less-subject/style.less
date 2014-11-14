@@ -104,6 +104,274 @@ a,p,span{
       }
     }
   }
+  .p2{
+    .main{
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      margin-left: -204px;
+    }
+    .btn{
+      display: block;
+      width: 60%;
+      height: 80px;
+      position: absolute;
+      top: 70%;
+      left: 20%;
+    }
+  }
+  .p3{
+    >img{
+      position: absolute;
+      transition: all ease-in-out 0.8s;
+      -webkit-transition: all ease-in-out 0.8s;
+      &.drag_1{
+        right: 0;
+        top: 50%;
+        opacity: 1;
+      }
+      &.drag_1.ani_t{
+        opacity: 0;
+      }
+      &.drag_2{
+        left: 50%;
+        margin-left: -235px;
+        bottom: 10%;
+        opacity: 0;
+      }
+      &.drag_2.ani_t{
+        opacity: 1;
+      }
+      &.arrow_rt{
+        top: 50%;
+        margin-top: 220px;
+        opacity: 1;
+        animation: arrow_ani 1s linear infinite alternate;
+        -webkit-animation: arrow_ani 1s linear infinite alternate;
+        @-webkit-keyframes arrow_ani{
+          0%{right: 15%;}
+          100%{right: 20%;}
+        }
+      }
+      &.arrow_rt.ani_t{
+        opacity: 0;
+      }
+    }
+  }
+  .p4 {
+    >img {
+      position: absolute;
+      &.main{
+        top: 50%;
+        margin-top: -475px;
+      }
+    }
+  }
+  .p5{
+    >img{
+      position: absolute;
+      &.main{
+        top: 50%;
+        margin-top: -310px;
+      }
+    }
+    .video_link{
+      display: block;
+      width: 100%;
+      height: 35%;
+      position: absolute;
+      top: 30%;
+    }
+  }
+  .p6{
+    >img{
+      position: absolute;
+    }
+    .event{
+      .absolutefull();
+      z-index: 1;
+    }
+    .form{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -280px;
+      margin-left: -252px;
+      .main{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #touchInput_1,#touchInput_2,.avt_1,.avt_2{
+        width: 220px;
+        height: 220px;
+        position: relative;
+        top: 150px;
+        opacity: 0;
+      }
+      #touchInput_2,.avt_2{
+        margin-left: 20px;
+      }
+      .avt_1,.avt_2{
+        width: 186px;
+        height: 186px;
+        position: absolute;
+        opacity: 1;
+        top: 175px;
+        overflow: hidden;
+        display: none;
+      }
+      .avt_1{
+        left: 28px;
+      }
+      .avt_2{
+        left: 258px;
+      }
+      #words{
+        position: relative;
+        width: 470px;
+        height: 35px;
+        top: 188px;
+        padding-left: 10px;
+      }
+    }
+  }
+  .p7{
+    .form {
+      position: absolute;
+      top: 50%;
+      margin-top: -320px;
+      .main {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      .avt_1{
+        position: absolute;
+        top: 155px;
+        left: 90px;
+      }
+      .avt_2{
+        position: absolute;
+        top: 155px;
+        left: 370px;
+      }
+      .words{
+        width: 475px;
+        height: 40px;
+        position: absolute;
+        top: 480px;
+        left: 50%;
+        margin-left: -235px;
+        text-align: center;
+        color: #6c6059;
+        font-size: 24px;
+        line-height: 40px;
+      }
+      .next,.focus{
+        display: block;
+        width: 50%;
+        height: 50px;
+        position: absolute;
+        bottom: 65px;
+        border: 1px red solid;
+        left: 25%;
+      }
+      .focus{
+        bottom: 0;
+      }
+      #canvas_3{
+        position: absolute;
+        top: 80px;
+        left: 0;z-index: 1;
+        border: 1px red solid;
+      }
+      #canvas_4{
+        position: absolute;
+        top: 80px;
+        right: 0;z-index: 1;
+        border: 1px red solid;
+      }
+    }
+  }
+  .p8{
+    .form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -332px;
+      margin-left: -148px;
+      .form_gx, .form_sorry {
+        > img {
+          position: relative;
+        }
+        > input {
+          box-sizing: border-box;
+          width: 280px;
+          border: 1px red solid;
+          position: absolute;
+          height: 38px;
+          margin: 0;
+          padding: 0 0 0 60px;
+        }
+        #name {
+          top: 430px;
+        }
+        #phone {
+          top: 470px;
+        }
+        #addr{
+          top: 510px;
+        }
+        #mail {
+          top: 550px;
+        }
+      }
+      #submit {
+        width: 280px;
+        border: 1px red solid;
+        position: absolute;
+        height: 45px;
+        bottom: 0;
+      }
+      .form_sorry{
+        &#name {
+          top: 470px;
+        }
+        &#phone {
+          top: 510px;
+        }
+        &#addr {
+          display: none;
+        }
+        &#mail {
+          top: 550px;
+        }
+      }
+    }
+  }
+  .p9{
+    .form{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -330px;
+      margin-left: -193px;
+      .btn{
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        -webkit-animation: btn_ani 1s linear infinite alternate;
+        @-webkit-keyframes btn_ani{
+          0%{bottom: 0;}
+          100%{bottom: -10px;}
+        }
+      }
+    }
+  }
 }
 
 //for iphone4,4s

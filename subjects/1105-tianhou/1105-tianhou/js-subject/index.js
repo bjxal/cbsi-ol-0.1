@@ -45,6 +45,20 @@ Fui.Template.Model = Fui.Template.Base.extend({
         this.$el.addClass('model');
     }
 });
+Fui.Template.Link = Fui.Template.Base.extend({
+    getGestureItems:function(){
+        return [{
+            gesture:'tap',
+            name:'link',
+            callback:function(e,$tar){
+                var link = $tar.attr("href");
+                if(link!="#"){
+                    window.location.href = link;
+                }
+            }
+        }]
+    }
+});
 var slider = new Fui.PageSlider({
     el:'#pack',
     curPage:0,
@@ -55,16 +69,16 @@ var slider = new Fui.PageSlider({
             bg:ImgDir('/p0/bg.jpg'),
             xtpl:'p0',
             design:function(){
-                var me = this;
-                me.$el.find(".txt").one("webkitTransitionEnd",function(){
-                    me.$el.find(".pop").fadeIn();
-                    setTimeout(function(){
-                        me.$el.find(".pop").fadeOut();
-                    },2000);
-                });
-                this.$el.find(".logo").on("touchend",function(){
-                    window.location.href = $(this).data("link");
-                });
+//                var me = this;
+//                me.$el.find(".txt").one("webkitTransitionEnd",function(){
+//                    me.$el.find(".pop").fadeIn();
+//                    setTimeout(function(){
+//                        me.$el.find(".pop").fadeOut();
+//                    },2000);
+//                });
+//                this.$el.find(".logo").on("touchend",function(){
+//                    window.location.href = $(this).data("link");
+//                });
             }
         }
         //  No. 1
@@ -169,12 +183,22 @@ var slider = new Fui.PageSlider({
             bg:ImgDir('/p_last/bg.jpg'),
             xtpl:'p_last'
         }
+        ,{
+            template:'Base',
+            bg:ImgDir('/share.png'),
+            xtpl:'share'
+        }
     ]
 });
 slider.render();
 flag = true;
 sit = setInterval(function(){
-    var $imglist = slider.getPage(slider.get('curPage')).$el.find('.imglist');
-    if($imglist.length>0 && flag==true)
-        action($imglist.children().last(),'left');
+    var page = slider.getPage(slider.get('curPage'));
+    if(page){
+        var $imglist = page.$el.find('.imglist');
+        if($imglist.length>0 && flag==true)
+            action($imglist.children().last(),'left');
+    }
+
+
 },3000);

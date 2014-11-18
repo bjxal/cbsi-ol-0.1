@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    ok_url = "http://www.onlylady.com/files/eventapi.php?c=Event&a=Fw";
+    ok_url = "http://www.onlylady.com/files/eventapi.php?c=Event&a=Fw&indexsId=553";
     $(".logo_1").on("touchend",function(){
         var cname = $(".px").attr("class");
         if(cname.indexOf("height_88")!=-1){
@@ -126,7 +126,7 @@ function setUl(item){
     var share = document.createElement("a");
     share.className="share";
     share.innerHTML="\u5206\u4EAB";
-    share.href="http://www.onlylady.com/files/eventapi.php?c=Event&a=Fw&action=details&eventid="+item.id;
+    share.href="http://www.onlylady.com/files/eventapi.php?c=Event&a=Fw&action=details&indexsId=553&eventid="+item.id;
     list_top.appendChild(name);
     list_top.appendChild(time);
     list_top.appendChild(zan);

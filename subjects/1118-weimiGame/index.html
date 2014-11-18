@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="330785652@qq.com"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="http://new-icon.ol-img.com/statics/common/js/device.js"></script>
+    <title>维多利亚的秘密-1008-游戏1前端</title>
+    <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
+</head>
+<body>
+
+<div id="pack" class="pack"></div>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/handlebars-1.3.0.min.js"></script>
+<!--<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/fliza/fliza-141029-1227.min.js"></script>-->
+<!-- p0 -->
+<script type="text/x-handlebars-template" id="p0">
+    <img data-src="{{IMG_DIR}}/p0/2.jpg"/>
+    <div class="word">
+        <img data-src="{{IMG_DIR}}/p0/word.png"/>
+    </div>
+</script>
+<!-- p0 -->
+<!-- p1 -->
+<script type="text/x-handlebars-template" id="p1">
+    <a class="arrow l"></a>
+    <a class="arrow r"></a>
+    <div class="imglist">
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/list/1.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/list/2.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/list/3.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/list/4.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/list/5.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/list/6.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/list/7.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/list/8.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/list/9.jpg"/>
+        <img data-leftSwipe="img" data-rightSwipe="img" data-src="{{IMG_DIR}}/p1/list/10.jpg"/>
+    </div>
+</script>
+<!-- p1 -->
+<!-- p2 -->
+<script type="text/x-handlebars-template" id="p2">
+</script>
+<!-- p2 -->
+<script type="text/javascript">
+    var _dir = (function (){
+        var href = $('#css').attr('href').toString();
+        if(!/^http/.test(href)){
+            href = location.href;
+        }else{
+            href = href.substring(0,href.lastIndexOf('\/'));
+        }
+        return href.substring(0,href.lastIndexOf('\/'))+'/img-subject';
+    })();
+    var ImgDir = function(p){
+        p = p||'';
+        return _dir + p;
+    }
+</script>
+<script type="text/javascript" src="js-subject/imports@.js"></script>
+<script type="text/javascript" src="js-subject/index.js"></script>
+<script type="text/javascript">
+    new Fui.Weixin({
+        title:"",
+        title1:"",
+        desc:"",
+        link: String(window.location.href),
+        img_url:ImgDir('/weixin.png')
+    });
+</script>
+</body>
+</html>

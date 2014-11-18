@@ -12,7 +12,7 @@ $(document).ready(function(){
             window.localStorage.setItem("showTips","false");
         }
     },1000);
-    ok_url = "http://www.onlylady.com/files/eventapi.php?c=Event&a=Fw";
+    ok_url = "http://www.onlylady.com/files/eventapi.php?c=Event&a=Fw&indexsId=553";
     //dy
     $(".cover").on("touchend",function(){
         $(this).fadeOut();
@@ -106,7 +106,7 @@ $(document).ready(function(){
                 var index = $(this).index()+1;
                 var strIndex = imgSrc.indexOf("/mb/");
                 var newImg  =imgSrc.substring(0,strIndex)+"/mb/"+index+".png";
-                $("#mb_id").val(index);//Ä£°åid
+                $("#mb_id").val(index);//Ä£ï¿½ï¿½id
                 $(".mbList").find("img").attr({"src":newImg,"data-index":index});
             }
     });
@@ -149,10 +149,10 @@ $(document).ready(function(){
             $(".p2 .step_3_2").fadeIn();
             var data = {
                 "action":"addevent",
-                "data[2136]":nickName,
-                "data[2137]":name,
-                "data[2138]":mobile,
-                "data[2139]":imgUrl
+                "data[2251]":nickName,
+                "data[2250]":name,
+                "data[2249]":mobile,
+                "data[2248]":imgUrl
             };
             ajax_fun_jsonp(data);
         }
@@ -221,7 +221,7 @@ function ajax_fun_jsonp(data){
 //                    $(".p3").fadeIn().find("#page").val(1);
 //                },2000);
                 setTimeout(function(){
-                    window.location.href="http://www.onlylady.com/files/eventapi.php?c=Event&a=Fw&action=list";
+                    window.location.href="http://www.onlylady.com/files/eventapi.php?c=Event&a=Fw&indexsId=553&action=list";
                 },2000);
             }
         },

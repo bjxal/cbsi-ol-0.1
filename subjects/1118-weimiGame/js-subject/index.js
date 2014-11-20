@@ -1,5 +1,30 @@
-var flag_1 = false;
-var flag_2 = false;
+Fui.Template.IMG_DIR = ImgDir();
+var winHeight = $(window).height();
+$(".match_result").height(winHeight+"px");
+//背景音乐
+var audio = new Audio();
+audio.loop = true;
+audio.preload = "auto";
+audio.autoplay = true;
+audio.isLoadedmetadata = false;
+audio.touchstart = true;
+audio.audio = true;
+audio.src = ImgDir('/music.mp3');
+audio.load();
+//mute
+$('#audio').on('touchend',function(e){
+    var $this = $(this);
+    e.stopPropagation();
+    e.preventDefault();
+    $this.toggleClass('stop');
+    if($this.hasClass('stop')){
+        audio.pause();
+    }else{
+        audio.play();
+    }
+});
+var models = ["Behati Prinsloo","Doutzen Kroes","Lindsay Ellingson","Lily Aldridge","karlie kloss","Candice Swanepoel","Alessandra Ambrosio","adriana lima","何穗","奚梦瑶"];
+//p1 switch photos
 var action = function($tar,type){
     var $p = $tar.parent().parent();
     $tar.parent().addClass(type).one('webkitTransitionEnd',function(){
@@ -7,8 +32,6 @@ var action = function($tar,type){
         $tar.parent().removeClass(type);
     });
 };
-Fui.Template.IMG_DIR = ImgDir();
-
 var PAGE0 = Fui.Template.extend({
     config:{
         template:'PAGE0',
@@ -19,10 +42,11 @@ var PAGE0 = Fui.Template.extend({
         me.$el.append(new Fui.Guagua({
             backgroundSrc:ImgDir('/p0/2.jpg'),
             maskSrc:ImgDir('/p0/1.jpg'),
-            completeValue:30,
+            completeValue:15,
             listeners:{
                 complete:function(){
                     slider.set("lock",false);
+                    me.$el.find(".gesture").fadeOut();
                     setTimeout(function(){
                         me.$el.find(".word").addClass("ani").one("webkitTransitionEnd",function(){
                             $(".fui-arrow.bottom").removeClass("hide").show();
@@ -82,17 +106,22 @@ var PAGE2 = Fui.Template.extend({
         var me = this;
         function tap_1_fun(e,$tar){
             var tch = e.$e.originalEvent.touches;
-            var i = Math.floor(Math.random()*10);
+            var random_val = Math.floor(Math.random()*10);
+            var i = (random_val==0)?1:random_val;
             if(tch.length>=0){
                 slider.set("lock",true);
                 var index = (i<5)?((i%2==0)?2:1):((i%2==0)?4:3);
                 me.$el.find(".sm,.kiss_word").hide();
                 me.$el.find(".kissList img").attr("src",ImgDir('/p2/kiss/'+index+'.png')).fadeIn();
-                $(".match_result .result_img").attr("src",ImgDir('/p3/'+i+'.jpg'));
+                $(".match_result .result_img").attr("src",ImgDir('/p3/model_jpg/'+i+'.jpg'));
                 $(".match_result .kiss").attr("src",ImgDir('/p3/kiss/'+index+'.png'));
+                //share_desc
+                Weixin.set("title","我和"+models[i-1]+"唇型最配！你也来玩游戏赢大奖吧!");
+                Weixin.set("desc","我和"+models[i-1]+"唇型最吻合！快来玩游戏看看你和哪个维密超模的唇型最匹配，还有机会赢得维密天使香吻哦！");
                 setTimeout(function(){
-                    me.$el.find(".match").fadeIn().find(".matching .jdt_move").addClass("width_260").one("webkitTransitionEnd",function(){
+                    me.$el.find(".match").fadeIn().find(".matching .jdt_move").animate({width:"260px"}).one("webkitTransitionEnd",function(){
                         me.$el.find(".matching").hide().siblings().show();
+                        me.$el.find(".matching .jdt_move").css("width","0px");
                     });
                 },2000);
             }
@@ -109,6 +138,15 @@ var PAGE2 = Fui.Template.extend({
                 callback:function(e,$tar){
                     me.$el.find(".share").fadeIn();
                     $("#scro_2").scrollable({circular:true}).autoscroll({ autoplay: true,interval: 2000}).navigator({navi:'#scro_2_nav'});
+                }
+            }
+            ,{
+                gesture:'tap',
+                name:'play_again',
+                callback:function(e,$tar){
+                    $tar.parent().fadeOut();
+                    me.$el.find(".match,.share,.kissList img").hide();
+                    me.$el.find(".kiss_word,.sm").show();
                 }
             }
         ]
@@ -159,3 +197,11 @@ var slider = new Fui.PageSlider({
 });
 slider.render();
 $(".fui-arrow.bottom").addClass("hide");
+//play again
+$(".again").on("touchend",function(e){
+    var $tar = $(e.currentTarget);
+    $tar.parent().fadeOut();
+    $(".p2").find(".match,.match .matchend,.share,.kissList img").hide();
+    $(".p2").find(".kiss_word,.sm,.matching").show();
+//    $(".p2").find(".matching .jdt").append("<span class='jdt_move'></span>");
+});

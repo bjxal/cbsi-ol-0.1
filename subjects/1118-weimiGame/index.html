@@ -10,7 +10,7 @@
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="format-detection" content="telephone=no" />
     <script src="http://new-icon.ol-img.com/statics/common/js/device.js"></script>
-    <title>维多利亚的秘密-1008-游戏1前端</title>
+    <title>【OnlyLady亲赴维密伦敦秀场】亲吻维密天使赢大奖!</title>
     <link id="css" rel="stylesheet" href="css-subject/style.css" media="screen" />
 </head>
 <body>
@@ -21,6 +21,7 @@
 <!--<script type="text/javascript" src="http://new-icon.ol-img.com/statics/common/js/fliza/fliza-141029-1227.min.js"></script>-->
 <!-- p0 -->
 <script type="text/x-handlebars-template" id="p0">
+    <img data-src="{{IMG_DIR}}/p0/gesture.png" class="gesture"/>
     <img data-src="{{IMG_DIR}}/p0/2.jpg"/>
     <div class="word">
         <img data-src="{{IMG_DIR}}/p0/word.png"/>
@@ -87,6 +88,7 @@
         <div class="kissList">
             <img src="img-subject/p2/kiss/1.png" class="kiss_1"/>
         </div>
+        <input type="hidden" id="share_desc" value="">
     </div>
     <!--唇印匹配-->
     <div class="match" style="display:none;">
@@ -143,14 +145,20 @@
 <!-- p2 -->
 <!--result-->
 <div class="match_result" style="display: none;">
-    <img src="img-subject/p3/1.jpg" class="result_img"/>
+    <img src="img-subject/p3/model_jpg/1.jpg" class="result_img"/>
     <img src="img-subject/p3/kiss/1.png" class="kiss"/>
+    <img data-tap="play_again" src="img-subject/p3/again.png" class="again" style="top: 17%;"/>
     <!--btn-->
-    <div class="link">
+    <div class="link" style="display: none;">
         <img src="img-subject/p3/link_btn.png" class="link_btn"/>
         <img src="img-subject/p3/icon.png" class="link_icon"/>
     </div>
 </div>
+<!--背景音乐-->
+<a id="audio" class="audio">
+    <span class="span"></span>
+    <span class="spanAni"></span>
+</a>
 <script type="text/javascript">
     var _dir = (function (){
         var href = $('#css').attr('href').toString();
@@ -166,49 +174,21 @@
         return _dir + p;
     }
 </script>
-<script type="text/javascript" src="js-subject/imports@.js"></script>
+<script type="text/javascript" src="js-subject/imports.min.js"></script>
 <script src="http://new-icon.ol-img.com/jslib/jquery-1.7.2.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js-subject/tools.min.js"></script>
 <script type="text/javascript" src="js-subject/index.js"></script>
 <script type="text/javascript">
-//    new Fui.Weixin({
-//        title:"",
-//        title1:"",
-//        desc:"",
-//        link: String(window.location.href),
-//        img_url:ImgDir('/weixin.png')
-//    });
-var WeixinData = {
-    "appid":"",
-    "img_url": ImgDir("/weixin.jpg"),
-    "img_width": "200",
-    "img_height": "200",
-    "link": String(window.location.href),
-    "desc": '',
-    "title": '测试'
-};
-// 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
-document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-    // 发送给好友
-    WeixinJSBridge.on('menu:share:appmessage', function(argv){
-        WeixinJSBridge.invoke('sendAppMessage',WeixinData, function(res) {
-            //_report('send_msg', res.err_msg);
-        });
+    var Weixin = new Fui.Weixin({
+        title:"【OnlyLady亲赴维密伦敦秀场】亲吻维密天使赢大奖！",
+        title1:"【OnlyLady亲赴维密伦敦秀场】亲吻维密天使赢大奖！",
+        desc:"快来玩游戏看看你和哪个维密超模的唇型最匹配，还有机会赢得维密天使香吻哦！",
+        link: String(window.location.href),
+        img_url:ImgDir('/weixin.png'),
+        share_ok:function(){
+            $(".match_result").show();
+        }
     });
-    // 分享到朋友圈
-    WeixinJSBridge.on('menu:share:timeline', function(argv){
-        WeixinJSBridge.invoke('shareTimeline',WeixinData, function(res) {
-            switch(res.err_msg){
-                case 'share:timeline:ok':
-                    $(".match_result").show();
-                    break;
-                case 'share:timeline:cancel':
-                    $(".match_result").show();
-                    break;
-            }
-        });
-    });
-}, false);
 </script>
 </body>
 </html>
